@@ -1,8 +1,11 @@
 /* Citizen Services Portal — service worker
-   App shell: cache-first. Fonts/CDN: stale-while-revalidate. Everything else: network. */
-const VERSION = 'nsp-v8';
-const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './map/nepal-map.json'];
-const RUNTIME_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com', 'cdn.jsdelivr.net'];
+   App shell and self-hosted scripts: cache-first. Google Fonts: stale-while-revalidate.
+   Only successful (200) responses are cached. Nothing else leaves the network path. */
+const VERSION = 'nsp-v9';
+const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png',
+  './map/nepal-map.json', './vendor/react.production.min.js', './vendor/react-dom.production.min.js', './vendor/nepali-date-converter.umd.js'];
+const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
+const cacheable = res => res && res.ok && (res.type === 'basic' || res.type === 'cors');
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
@@ -19,26 +22,25 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
 
-  // Page navigations: try network, fall back to cached shell (offline)
   if (req.mode === 'navigate') {
     e.respondWith(fetch(req).then(res => {
-      const copy = res.clone(); caches.open(VERSION).then(c => c.put('./index.html', copy)); return res;
+      if (cacheable(res)) { const copy = res.clone(); caches.open(VERSION).then(c => c.put('./index.html', copy)); }
+      return res;
     }).catch(() => caches.match('./index.html')));
     return;
   }
 
-  // Same-origin static files: cache-first
   if (url.origin === location.origin) {
     e.respondWith(caches.match(req).then(hit => hit || fetch(req).then(res => {
-      const copy = res.clone(); caches.open(VERSION).then(c => c.put(req, copy)); return res;
+      if (cacheable(res)) { const copy = res.clone(); caches.open(VERSION).then(c => c.put(req, copy)); }
+      return res;
     })));
     return;
   }
 
-  // Fonts and React from CDN: stale-while-revalidate
-  if (RUNTIME_HOSTS.includes(url.hostname)) {
+  if (FONT_HOSTS.includes(url.hostname)) {
     e.respondWith(caches.open(VERSION).then(c => c.match(req).then(hit => {
-      const net = fetch(req).then(res => { c.put(req, res.clone()); return res; }).catch(() => hit);
+      const net = fetch(req).then(res => { if (cacheable(res)) c.put(req, res.clone()); return res; }).catch(() => hit);
       return hit || net;
     })));
   }

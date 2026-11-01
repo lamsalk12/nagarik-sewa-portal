@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lamsalk12.github.io/nagarik-sewa-portal/sitemap.xml

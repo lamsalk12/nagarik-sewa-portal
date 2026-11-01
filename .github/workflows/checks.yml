@@ -1,0 +1,23 @@
+name: Site checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Content-Security-Policy matches the inline script
+        run: node tools/csp.mjs
+      - name: Inline script has no syntax errors
+        run: |
+          node -e "const s=require('fs').readFileSync('index.html','utf8');const m=[...s.matchAll(/<script>([\s\S]*?)<\/script>/g)];require('fs').writeFileSync('/tmp/app.js',m[m.length-1][1])"
+          node --check /tmp/app.js
+      - name: JSON files are valid
+        run: for f in manifest.webmanifest map/nepal-map.json gis/nepal-admin.topojson; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" && echo "ok $f"; done

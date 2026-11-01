@@ -2,6 +2,8 @@
 
 A community-led initiative. Not affiliated with the Government of Nepal.
 
+Live: https://lamsalk12.github.io/nagarik-sewa-portal/
+
 Static files, no build step. Host the folder on any HTTPS server (or `localhost`):
 
     npx serve .        # or: python3 -m http.server 8080
@@ -32,6 +34,13 @@ Voice search and read-aloud need the app on its own HTTPS address (they are bloc
 | After provincial budgets | `VEHICLE` (only Bagmati has full slabs; others have reference bands), `LAND_RATES` |
 | When the next year's holiday list is gazetted (Falgun) | `HOLIDAY_YEAR`, `HOLIDAYS` |
 | Office hours change | `OPEN_MIN`, `isWinter`, `officeHours` |
+
+## SEO and security
+- Search: title, description, canonical URL, Open Graph/Twitter sharing card (`icons/og-image.png`), JSON-LD (WebSite, WebApplication), `sitemap.xml`, crawlable fallback content inside `#root`, per-page titles.
+- To appear in Google faster: add the site in Google Search Console and submit `sitemap.xml`.
+- `robots.txt` only takes effect at a domain root, so it matters once the site has a custom domain.
+- Security: self-hosted scripts in `vendor/`, a strict Content-Security-Policy (scripts by SHA-256 hash), `strict-origin-when-cross-origin` referrer policy, no forms or personal data, service worker caches only successful same-origin responses and Google Fonts.
+- After editing the inline script run `node tools/csp.mjs --write`; the "Site checks" workflow fails if the policy is stale. See `SECURITY.md`.
 
 ## Monthly link check
 `tools/linkcheck.mjs` checks every official site the app links to and writes `link-report.md`/`.json`:
