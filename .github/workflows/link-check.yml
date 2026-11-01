@@ -24,4 +24,6 @@ jobs:
         if: steps.run.outputs.broken != '0' || steps.run.outputs.moved != '0'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh issue create --title "Link check $(date +%Y-%m): ${{ steps.run.outputs.broken }} not responding, ${{ steps.run.outputs.moved }} moved" --body-file link-report.md --label link-check || gh issue create --title "Link check $(date +%Y-%m)" --body-file link-report.md
+        run: |
+          title="Link check $(date +%Y-%m) - ${{ steps.run.outputs.broken }} not responding, ${{ steps.run.outputs.moved }} moved"
+          gh issue create --title "$title" --body-file link-report.md --label link-check || gh issue create --title "$title" --body-file link-report.md
