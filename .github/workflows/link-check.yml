@@ -1,0 +1,27 @@
+name: Monthly link check
+on:
+  schedule:
+    - cron: '17 3 1 * *'   # 1st of every month, 09:02 Nepal time
+  workflow_dispatch: {}
+permissions:
+  contents: read
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - id: run
+        run: node tools/linkcheck.mjs index.html
+      - uses: actions/upload-artifact@v4
+        with:
+          name: link-report
+          path: link-report.*
+      - name: Open an issue when links break or move
+        if: steps.run.outputs.broken != '0' || steps.run.outputs.moved != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --title "Link check $(date +%Y-%m): ${{ steps.run.outputs.broken }} not responding, ${{ steps.run.outputs.moved }} moved" --body-file link-report.md --label link-check || gh issue create --title "Link check $(date +%Y-%m)" --body-file link-report.md

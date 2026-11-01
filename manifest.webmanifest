@@ -1,0 +1,80 @@
+{
+  "name": "नागरिक सेवा पोर्टल · Citizen Services Portal",
+  "short_name": "नागरिक सेवा",
+  "description": "A community-led directory of Nepal government services, provinces and local bodies. Not affiliated with the Government of Nepal.",
+  "lang": "ne",
+  "dir": "ltr",
+  "id": "./",
+  "start_url": "./#home",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f2f4f9",
+  "theme_color": "#003893",
+  "categories": [
+    "government",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "आपतकालीन नम्बर · Emergency",
+      "url": "./#help",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "सेवा गाइड · Service guides",
+      "url": "./#guides",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "जिल्लाका कार्यालय · District offices",
+      "url": "./#offices",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "बिदा पात्रो · Holiday calendar",
+      "url": "./#holidays",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
