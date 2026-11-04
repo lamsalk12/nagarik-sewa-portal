@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-3Vj+SEc5y8ic2Q8TK4aClexDAgQGMtlcUUbvEGsl4XY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-0Geke+AwfDSdJg4FcydVjwSUBgq+kQz4p6zAUBMiMuE='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>नागरिक सेवा पोर्टल · Nepal government services directory</title>
 <meta name="description" content="नेपालका संघीय निकाय, ७ प्रदेश, ७७ जिल्ला र ७५३ स्थानीय तहका आधिकारिक वेबसाइट, सेवा गाइड, बिदा पात्रो, कर हिसाब र नक्सा एकै ठाउँमा। Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.">
@@ -669,6 +669,8 @@ input[type=date].control{appearance:auto;-webkit-appearance:auto}
 <p>नेपालका संघीय निकाय, ७ प्रदेश, ७७ जिल्ला र ७५३ स्थानीय तहका आधिकारिक वेबसाइट, सेवा गाइड, बिदा पात्रो, कर हिसाब र नक्सा एकै ठाउँमा।</p><p lang="en">Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.</p>
 <h2>सेवा र उपकरण · Services and tools</h2>
 <ul><li><a href="#guides">सेवा गाइड: नागरिकता, राहदानी, सवारी चालक अनुमतिपत्र, जन्म र विवाह दर्ता, प्यान, जग्गा · Service guides</a></li>
+<li><a href="#sector-universities">विश्वविद्यालय र स्वास्थ्य प्रतिष्ठान: त्रिभुवन, काठमाडौं, पोखरा, पूर्वाञ्चल र अन्य · Universities and health academies</a></li>
+<li><a href="#guide-noc">विदेश अध्ययनका लागि NOC, डिग्री समकक्षता, एसईई र कक्षा १२ नतिजा · Study abroad NOC, degree equivalence, SEE results</a></li>
 <li><a href="#offices">७७ जिल्लाका कार्यालय र खुल्ने समय · District offices and opening hours</a></li>
 <li><a href="#map">नेपालको प्रशासनिक नक्सा · Administrative map of Nepal</a></li>
 <li><a href="#holidays">बिदा पात्रो २०८३ · Holiday calendar 2083 BS</a></li>
@@ -755,12 +757,44 @@ const SECTORS = [
   ['महालेखा नियन्त्रक कार्यालय','Financial Comptroller General Office','fcgo.gov.np'],
   ['नेपाल राष्ट्र बैंक','Nepal Rastra Bank','nrb.org.np'],
   ['नेपाल धितोपत्र बोर्ड','Securities Board of Nepal','sebon.gov.np']]},
- {id:'education',icon:'school',ne:'शिक्षा तथा विज्ञान',en:'Education & Science',sites:[
+ {id:'education',icon:'school',ne:'शिक्षा, परीक्षा तथा परिषद्',en:'Education, Exams & Councils',sites:[
   ['शिक्षा, विज्ञान तथा प्रविधि मन्त्रालय','Ministry of Education, Science and Technology','moest.gov.np'],
+  ['विदेश अध्ययन अनुमति (NOC)','No Objection Certificate for study abroad','noc.moest.gov.np','NOC'],
   ['शिक्षा तथा मानव स्रोत विकास केन्द्र','Center for Education and Human Resource Development','cehrd.gov.np'],
-  ['राष्ट्रिय परीक्षा बोर्ड','National Examinations Board','neb.gov.np','Results'],
-  ['विश्वविद्यालय अनुदान आयोग','University Grants Commission','ugc.edu.np'],
-  ['प्राविधिक शिक्षा तथा व्यावसायिक तालिम परिषद्','CTEVT','ctevt.org.np']]},
+  ['राष्ट्रिय परीक्षा बोर्ड','National Examinations Board','neb.gov.np','Class 12 results'],
+  ['एसईई नतिजा (राष्ट्रिय परीक्षा बोर्ड)','SEE results (National Examinations Board)','see.gov.np','SEE results'],
+  ['विश्वविद्यालय अनुदान आयोग','University Grants Commission','ugcnepal.edu.np','Equivalence'],
+  ['प्राविधिक शिक्षा तथा व्यावसायिक तालिम परिषद्','CTEVT','ctevt.org.np'],
+  ['शिक्षक सेवा आयोग','Teacher Service Commission','tsc.gov.np','Teacher licence'],
+  ['चिकित्सा शिक्षा आयोग','Medical Education Commission','mec.gov.np','MECEE entrance'],
+  ['नेपाल मेडिकल काउन्सिल','Nepal Medical Council','nmc.org.np'],
+  ['नेपाल नर्सिङ काउन्सिल','Nepal Nursing Council','nnc.org.np'],
+  ['नेपाल स्वास्थ्य व्यवसायी परिषद्','Nepal Health Professional Council','nhpc.gov.np'],
+  ['नेपाल इन्जिनियरिङ परिषद्','Nepal Engineering Council','nec.gov.np']]},
+ {id:'universities',icon:'account_balance',ne:'विश्वविद्यालय तथा स्वास्थ्य प्रतिष्ठान',en:'Universities & Health Academies',sites:[
+  ['त्रिभुवन विश्वविद्यालय','Tribhuvan University','tu.edu.np'],
+  ['काठमाडौं विश्वविद्यालय','Kathmandu University','ku.edu.np'],
+  ['पोखरा विश्वविद्यालय','Pokhara University','pu.edu.np'],
+  ['पूर्वाञ्चल विश्वविद्यालय','Purbanchal University','purbanchaluniversity.edu.np'],
+  ['नेपाल संस्कृत विश्वविद्यालय','Nepal Sanskrit University','nsu.edu.np'],
+  ['लुम्बिनी बौद्ध विश्वविद्यालय','Lumbini Buddhist University','lbu.edu.np'],
+  ['कृषि तथा वन विज्ञान विश्वविद्यालय','Agriculture and Forestry University','afu.edu.np'],
+  ['सुदूरपश्चिम विश्वविद्यालय','Far-western University','fwu.edu.np'],
+  ['मध्यपश्चिम विश्वविद्यालय','Mid-West University','mwu.edu.np'],
+  ['नेपाल खुला विश्वविद्यालय','Nepal Open University','nou.edu.np'],
+  ['राजर्षि जनक विश्वविद्यालय','Rajarshi Janak University','rju.edu.np'],
+  ['मदन भण्डारी विज्ञान तथा प्रविधि विश्वविद्यालय','Madan Bhandari University of Science and Technology','mbust.edu.np'],
+  ['विदुषी योगमाया हिमालयन आयुर्वेद विश्वविद्यालय','Vidushi Yogmaya Himalayan Ayurveda University','yogmayaau.edu.np'],
+  ['नेपाल विश्वविद्यालय','University of Nepal','unepal.edu.np'],
+  ['मनमोहन प्राविधिक विश्वविद्यालय','Manmohan Technical University (Koshi Province)','mtu.edu.np','Provincial'],
+  ['चिकित्सा शास्त्र अध्ययन संस्थान (त्रि.वि.)','Institute of Medicine, TU','iom.edu.np'],
+  ['बी.पी. कोइराला स्वास्थ्य विज्ञान प्रतिष्ठान','B. P. Koirala Institute of Health Sciences','bpkihs.edu','Health academy'],
+  ['राष्ट्रिय चिकित्सा विज्ञान प्रतिष्ठान','National Academy of Medical Sciences','nams.org.np','Health academy'],
+  ['पाटन स्वास्थ्य विज्ञान प्रतिष्ठान','Patan Academy of Health Sciences','pahs.edu.np','Health academy'],
+  ['कर्णाली स्वास्थ्य विज्ञान प्रतिष्ठान','Karnali Academy of Health Sciences','kahs.edu.np','Health academy'],
+  ['राप्ती स्वास्थ्य विज्ञान प्रतिष्ठान','Rapti Academy of Health Sciences','rahs.edu.np','Health academy'],
+  ['पोखरा स्वास्थ्य विज्ञान प्रतिष्ठान','Pokhara Academy of Health Sciences','poahs.edu.np','Health academy'],
+  ['नेपाली सेना स्वास्थ्य विज्ञान संस्थान','Nepalese Army Institute of Health Sciences','naihs.edu.np','Health academy']]},
  {id:'health',icon:'local_hospital',ne:'स्वास्थ्य तथा जनसंख्या',en:'Health & Population',sites:[
   ['स्वास्थ्य तथा जनसंख्या मन्त्रालय','Ministry of Health and Population','mohp.gov.np'],
   ['स्वास्थ्य सेवा विभाग','Department of Health Services','dohs.gov.np'],
@@ -1139,7 +1173,51 @@ const GUIDES = [
    ['बीमा र कल्याणकारी कोषमा रकम जम्मा गर्नुहोस्।','Pay into the insurance and the welfare fund.'],
    ['विभागको अनलाइन प्रणालीबाट श्रम स्वीकृति लिनुहोस्।','Get the labour permit through the department’s online system.']],
   docs:[['राहदानी','Passport'],['भिसा र रोजगार सम्झौता','Visa and employment contract'],['स्वास्थ्य परीक्षण प्रतिवेदन','Medical report'],['अभिमुखीकरण प्रमाणपत्र','Orientation certificate'],['बीमा कागजात','Insurance papers']],
-  tipNe:'म्यानपावरलाई तोकिएभन्दा बढी पैसा नदिनुहोस्; रसिद अनिवार्य लिनुहोस्।',tipEn:'Never pay an agency more than the official amount, and always get a receipt.'}
+  tipNe:'म्यानपावरलाई तोकिएभन्दा बढी पैसा नदिनुहोस्; रसिद अनिवार्य लिनुहोस्।',tipEn:'Never pay an agency more than the official amount, and always get a receipt.'},
+ {id:'noc',icon:'school',ne:'विदेश अध्ययनका लागि NOC',en:'NOC for studying abroad',
+  officeNe:'शिक्षा, विज्ञान तथा प्रविधि मन्त्रालय (अनलाइन, noc.moest.gov.np)',officeEn:'Ministry of Education, Science and Technology (online, noc.moest.gov.np)',
+  whoNe:'विदेशी कलेज वा विश्वविद्यालयमा भर्ना पाएका विद्यार्थी',whoEn:'Students admitted to a foreign college or university',domain:'noc.moest.gov.np',
+  steps:[['noc.moest.gov.np मा इमेल र मोबाइल नम्बरले खाता खोल्नुहोस्।','Create an account on noc.moest.gov.np with your email and mobile number.'],
+   ['व्यक्तिगत, शैक्षिक र अध्ययन गर्ने देशको विवरण राहदानीसँग मिल्ने गरी भर्नुहोस्।','Fill in your personal, academic and destination details exactly as in your passport.'],
+   ['तलका कागजात स्क्यान गरी PDF वा JPG मा अपलोड गर्नुहोस्।','Scan and upload the documents below as PDF or JPG.'],
+   ['शुल्क तोकिएको भए पोर्टलमा देखाइएअनुसार तिर्नुहोस्, र पेस गर्नुहोस्।','Pay the fee if the portal shows one, then submit.'],
+   ['स्वीकृत भएपछि लगइन गरी NOC डाउनलोड गर्नुहोस्।','Once approved, log in and download your NOC.']],
+  docs:[['SEE, कक्षा १२ र स्नातक तहसम्मका शैक्षिक प्रमाणपत्र','Academic certificates and transcripts (SEE, Class 12, bachelor’s if any)'],['विदेशी शैक्षिक संस्थाको भर्ना पत्र (Offer letter)','Offer letter from the foreign institution'],['नागरिकता (दुवै पाटा)','Citizenship certificate (both sides)'],['राहदानीको विवरण पाना','Passport bio page'],['समकक्षता प्रमाणपत्र (आवश्यक भए)','Equivalence certificate, if required']],
+  tipNe:'NOC बनाइदिन्छु भन्ने बिचौलियालाई पैसा नदिनुहोस्; आवेदन आफैं अनलाइन दिन सकिन्छ।',tipEn:'Do not pay middlemen to get an NOC; you can apply online yourself.'},
+ {id:'equivalence',icon:'workspace_premium',ne:'विदेशी डिग्रीको समकक्षता',en:'Equivalence for a foreign degree',
+  officeNe:'विश्वविद्यालय अनुदान आयोग (अनलाइन)',officeEn:'University Grants Commission (online)',
+  whoNe:'विदेशमा पढेर नेपालमा जागिर वा थप अध्ययन गर्न चाहने',whoEn:'People who studied abroad and need the degree recognised in Nepal',domain:'ugcnepal.edu.np',
+  steps:[['विश्वविद्यालय अनुदान आयोगको वेबसाइटमा अनलाइन आवेदन दिनुहोस्।','Apply online on the University Grants Commission website.'],
+   ['तलका कागजात अपलोड गर्नुहोस्।','Upload the documents below.'],
+   ['सम्बन्धित विषय समितिले जाँच गर्छ; केही मिलेन भने अनलाइनै सच्याउनुहोस्।','A subject committee reviews it; correct anything it asks for online.'],
+   ['स्वीकृत भएपछि समकक्षता पत्र अनलाइन प्रिन्ट गर्नुहोस्।','After approval, print the equivalence letter online.']],
+  docs:[['समकक्षता माग्ने तह र त्योभन्दा तल्लो तहको उत्तीर्ण प्रमाणपत्र','Pass certificates for the level you want recognised and the level below it'],['सक्कल प्रमाणपत्र (दीक्षान्त नभए अस्थायी प्रमाणपत्र र ट्रान्सक्रिप्ट)','Original degree certificate (or provisional certificate and transcript if there was no convocation)'],['खुला वा दूर शिक्षा भए विश्वविद्यालयको आधिकारिक पत्र','For open or distance learning, an official letter from the university']],
+  tipNe:'२०८३ साउनदेखि यो काम त्रिभुवन विश्वविद्यालयबाट विश्वविद्यालय अनुदान आयोगमा सरेको छ।',tipEn:'Since Shrawan 2083 this is handled by the University Grants Commission instead of Tribhuvan University.'},
+ {id:'results',icon:'grading',ne:'एसईई र कक्षा १२ को नतिजा',en:'SEE and Class 12 results',
+  officeNe:'राष्ट्रिय परीक्षा बोर्ड, सानोठिमी',officeEn:'National Examinations Board, Sanothimi',
+  whoNe:'एसईई (कक्षा १०) र कक्षा १२ का विद्यार्थी',whoEn:'SEE (Class 10) and Class 12 students',domain:'neb.gov.np',
+  steps:[['नतिजा प्रकाशित भएपछि see.gov.np (एसईई) वा neb.gov.np (कक्षा १२) मा सिम्बोल नम्बर र जन्म मिति राखेर हेर्नुहोस्।','When results are out, check see.gov.np (SEE) or neb.gov.np (Class 12) with your symbol number and date of birth.'],
+   ['इन्टरनेट नभए नेपाल टेलिकमबाट SEE <सिम्बोल नम्बर> लेखेर १६०० मा SMS पठाउनुहोस्।','Without internet, text SEE <symbol number> to 1600 from a Nepal Telecom phone.'],
+   ['अंकमा शंका लागे बोर्डले तोकेको समयभित्र पुनर्योगका लागि आवेदन दिनुहोस्।','If you doubt your marks, apply for re-totalling within the period the board announces.'],
+   ['ग्रेडसिट र प्रमाणपत्र आफ्नो विद्यालयमार्फत लिनुहोस्।','Collect your grade sheet and certificate through your school.']],
+  docs:[['प्रवेश पत्र (सिम्बोल नम्बर)','Admit card (symbol number)'],['जन्म मिति','Date of birth']],
+  tipNe:'नतिजा हेर्न पैसा माग्ने वा OTP माग्ने वेबसाइटबाट टाढा रहनुहोस्।',tipEn:'Avoid any site that asks for money or an OTP to show your result.'},
+ {id:'mecee',icon:'medical_services',ne:'चिकित्सा शिक्षा प्रवेश परीक्षा (MECEE)',en:'Medical entrance exam (MECEE)',
+  officeNe:'चिकित्सा शिक्षा आयोग, सानोठिमी (अनलाइन)',officeEn:'Medical Education Commission, Sanothimi (online)',
+  whoNe:'MBBS, BDS, BSc नर्सिङ जस्ता स्वास्थ्य विषय पढ्न चाहने',whoEn:'Students applying for MBBS, BDS, BSc Nursing and other health programmes',domain:'mec.gov.np',
+  steps:[['आयोगको सूचनामा तोकिएको योग्यता (कक्षा १२ का विषय र न्यूनतम अंक) जाँच्नुहोस्।','Check the eligibility in the Commission’s notice (Class 12 subjects and minimum grades).'],
+   ['सूचना निस्केपछि mec.gov.np मा अनलाइन आवेदन दिई शुल्क तिर्नुहोस्।','When the notice is out, apply online at mec.gov.np and pay the fee.'],
+   ['प्रवेश पत्र डाउनलोड गरी तोकिएको केन्द्रमा परीक्षा दिनुहोस्।','Download your admit card and sit the exam at your assigned centre.'],
+   ['नतिजा र मेरिट सूचीपछि आयोगको प्रक्रियाअनुसार कलेज छनोट गर्नुहोस्।','After the results and merit list, choose a college through the Commission’s process.']],
+  docs:[['कक्षा १२ को ग्रेडसिट र प्रमाणपत्र','Class 12 grade sheet and certificate'],['नागरिकता वा जन्मदर्ता','Citizenship or birth certificate'],['पासपोर्ट साइजको फोटो','Passport-size photo']]},
+ {id:'teacher',icon:'cast_for_education',ne:'शिक्षक अध्यापन अनुमतिपत्र',en:'Teaching licence',
+  officeNe:'शिक्षक सेवा आयोग (अनलाइन, license.tsc.gov.np)',officeEn:'Teacher Service Commission (online, license.tsc.gov.np)',
+  whoNe:'विद्यालयमा पढाउन चाहने, तोकिएको शैक्षिक योग्यता भएका',whoEn:'People with the required qualification who want to teach in schools',domain:'tsc.gov.np',
+  steps:[['आयोगले अनुमतिपत्र परीक्षाको सूचना निकालेपछि license.tsc.gov.np मा अनलाइन आवेदन दिनुहोस्।','When the Commission announces the licence exam, apply online at license.tsc.gov.np.'],
+   ['तह (प्राथमिक, निम्न माध्यमिक, माध्यमिक) र विषय छान्नुहोस्; शुल्क तिर्नुहोस्।','Choose the level and subject, and pay the fee.'],
+   ['लिखित परीक्षा दिनुहोस्।','Sit the written exam.'],
+   ['उत्तीर्ण भएपछि अध्यापन अनुमतिपत्र लिनुहोस्; यसबिना सरकारी वा निजी विद्यालयमा पढाउन पाइँदैन।','Once you pass, collect your teaching licence; you need it to teach in public or private schools.']],
+  docs:[['शैक्षिक योग्यताका प्रमाणपत्र','Academic certificates for the required level'],['नागरिकता','Citizenship certificate'],['फोटो','Photo']]}
 ].map(g => ({...g,url:'https://'+g.domain+'/'}));
 
 function GuidesPage({t}){
@@ -1445,6 +1523,18 @@ function DistrictPage({t,lang,slug}){
    Life-event journeys — the right guides in the right order
    ===================================================================== */
 const JOURNEYS = [
+ {id:'study-abroad',icon:'school',ne:'विदेश पढ्न जाँदा',en:'Going abroad to study',steps:[
+  {guide:'passport',ne:'राहदानी बनाउनुहोस् वा म्याद जाँच्नुहोस्।',en:'Get a passport or check its expiry.'},
+  {guide:'results',ne:'SEE, कक्षा १२ र अन्य शैक्षिक कागजात तयार राख्नुहोस्।',en:'Have your SEE, Class 12 and other academic papers ready.'},
+  {guide:'noc',ne:'भर्ना पत्र पाएपछि शिक्षा मन्त्रालयबाट NOC लिनुहोस्।',en:'After your offer letter, get an NOC from the Ministry of Education.'},
+  {domain:'mofa.gov.np',ne:'भिसाका लागि सम्बन्धित देशको दूतावासमा आवेदन दिनुहोस्; कागजात प्रमाणित गराउनु परे कन्सुलर सेवा विभाग जानुहोस्।',en:'Apply for a visa at that country’s embassy; if papers need attesting, use the Department of Consular Services.'},
+  {guide:'equivalence',ne:'फर्केर नेपालमा जागिर वा थप पढाइ गर्दा डिग्रीको समकक्षता लिनुहोस्।',en:'When you come back, get your degree recognised before applying for jobs or further study.'}]},
+ {id:'after-school',icon:'auto_stories',ne:'एसईई वा कक्षा १२ पछि',en:'After SEE or Class 12',steps:[
+  {guide:'results',ne:'नतिजा हेर्नुहोस्; शंका भए पुनर्योगको समयभित्र आवेदन दिनुहोस्।',en:'Check your result; apply for re-totalling in time if you doubt it.'},
+  {href:'#sector-universities',ne:'विश्वविद्यालय र प्रतिष्ठानका कार्यक्रम र भर्ना सूचना हेर्नुहोस्।',en:'Compare programmes and admission notices of universities and academies.'},
+  {domain:'ctevt.org.np',ne:'प्राविधिक वा व्यावसायिक विषय (डिप्लोमा, प्री-डिप्लोमा) का लागि CTEVT हेर्नुहोस्।',en:'For technical or vocational courses (diploma, pre-diploma), see CTEVT.'},
+  {guide:'mecee',ne:'स्वास्थ्य विषय पढ्ने भए चिकित्सा शिक्षा आयोगको प्रवेश परीक्षा दिनुहोस्।',en:'For health programmes, sit the Medical Education Commission entrance exam.'},
+  {guide:'citizenship',ne:'१६ वर्ष पुगेपछि नागरिकता लिनुहोस्; धेरै भर्ना र छात्रवृत्तिमा चाहिन्छ।',en:'Get citizenship once you are 16; many admissions and scholarships need it.'}]},
  {id:'baby',icon:'child_friendly',ne:'बच्चा जन्मँदा',en:'Having a baby',steps:[
   {guide:'birth',ne:'जन्म भएको ३५ दिनभित्र वडा कार्यालयमा जन्म दर्ता गर्नुहोस्।',en:'Register the birth at the ward office within 35 days.'},
   {domain:'dohs.gov.np',ne:'नजिकको स्वास्थ्य संस्थामा राष्ट्रिय खोप तालिकाअनुसार निःशुल्क खोप लगाउनुहोस्।',en:'Get free vaccines at your nearest health facility, following the national schedule.'},
@@ -1492,7 +1582,7 @@ function JourneyPage({t,id}){
     h('ol',{className:'journey-steps'},j.steps.map((s,i) => {
       const g = s.guide && GUIDES.find(x=>x.id===s.guide);
       const link = g ? h('a',{className:'j-link',href:'#guide-'+g.id},h(Icon,{name:'menu_book',size:18}),t(`गाइड: ${g.ne}`,`Guide: ${g.en}`))
-        : s.href ? h('a',{className:'j-link',href:s.href},h(Icon,{name:s.href==='#offices'?'apartment':'location_city',size:18}),s.href==='#offices'?t('आफ्नो जिल्ला र वडा खोज्नुहोस्','Find your district and ward'):t('प्रदेश र पालिका हेर्नुहोस्','See provinces and local levels'))
+        : s.href ? h('a',{className:'j-link',href:s.href},h(Icon,{name:s.href==='#offices'?'apartment':s.href.startsWith('#sector-')?'account_balance':'location_city',size:18}),s.href==='#offices'?t('आफ्नो जिल्ला र वडा खोज्नुहोस्','Find your district and ward'):s.href==='#sector-universities'?t('विश्वविद्यालयहरू हेर्नुहोस्','See universities'):t('प्रदेश र पालिका हेर्नुहोस्','See provinces and local levels'))
         : s.domain ? h('a',{className:'j-link',href:'https://'+s.domain+'/',target:'_blank',rel:'noopener noreferrer',onClick:()=>Saved.visit({ne:s.domain,en:s.domain,domain:s.domain,url:'https://'+s.domain+'/'})},h(Icon,{name:'open_in_new',size:18}),s.domain) : null;
       return h('li',{key:i},h('span',{className:'step-no num'},t(toNe(i+1),i+1)),
         h('div',{className:'j-body'},h('p',null,t(s.ne,s.en)),link));
@@ -2296,7 +2386,7 @@ function MapTeaser({t}){
 }
 
 /* ---------- Home ---------- */
-const GUIDE_TAGS = {citizenship:'nagarikta nagrikta nagarikata',passport:'rahadani rahdani passport',licence:'license lisens driving sawari chalak',nid:'national id parichaya patra',birth:'janma darta janmadarta',marriage:'bibaha biwaha bivah darta',pan:'pan tax kar',company:'company kampani darta',land:'jagga malpot lalpurja nakasa',labour:'shram swikriti labor permit abroad bidesh'};
+const GUIDE_TAGS = {citizenship:'nagarikta nagrikta nagarikata',passport:'rahadani rahdani passport',licence:'license lisens driving sawari chalak',nid:'national id parichaya patra',birth:'janma darta janmadarta',marriage:'bibaha biwaha bivah darta',pan:'pan tax kar',company:'company kampani darta',land:'jagga malpot lalpurja nakasa',labour:'shram swikriti labor permit abroad bidesh',noc:'noc no objection bidesh padhai abroad study visa',equivalence:'samakakshata samakakshyata equivalence degree ugc',results:'see result natija parinam plus two +2 class 12 neb grade sheet',mecee:'mecee mbbs entrance pravesh nursing bds doctor',teacher:'teacher license shikshak lisens tsc adhyapan'};
 let SEARCH_INDEX = null;
 function searchIndex(){
   if (SEARCH_INDEX) return SEARCH_INDEX;
