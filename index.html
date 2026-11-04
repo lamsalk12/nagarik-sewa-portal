@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-0Geke+AwfDSdJg4FcydVjwSUBgq+kQz4p6zAUBMiMuE='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-nbRGKcvx1Dh0cEKsRkM2i/2KeCUjN3VlcUHWPU11wmE='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>नागरिक सेवा पोर्टल · Nepal government services directory</title>
 <meta name="description" content="नेपालका संघीय निकाय, ७ प्रदेश, ७७ जिल्ला र ७५३ स्थानीय तहका आधिकारिक वेबसाइट, सेवा गाइड, बिदा पात्रो, कर हिसाब र नक्सा एकै ठाउँमा। Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.">
@@ -624,6 +624,19 @@ input[type=date].control{appearance:auto;-webkit-appearance:auto}
 .map-teaser:hover .map-box{border-color:var(--brand-primary)}
 :root[data-contrast="high"] .map-box path{stroke:var(--text-strong)}
 
+/* ---------- Official apps ---------- */
+.app-list{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+@media (max-width:420px){.app-list{grid-template-columns:1fr}}
+.app-card{display:flex;flex-direction:column;gap:10px;padding:18px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);min-width:0}
+.app-head{display:flex;gap:12px;align-items:flex-start}
+.app-name{min-width:0}
+.app-name h2{font-family:var(--font-heading);font-size:18px;font-weight:700}
+.app-name p{display:flex;align-items:center;gap:4px;font-size:13.5px;color:var(--status-success-fg);font-weight:600;line-height:1.35}
+.app-desc{color:var(--text-body);font-size:15px;line-height:1.5}
+.store-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.store-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 12px;border-radius:var(--radius-md);border:1.5px solid var(--border-strong);color:var(--text-link);text-decoration:none;font-weight:600;font-size:14px;max-width:100%}
+.store-btn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.store-btn:hover{border-color:var(--brand-primary);background:var(--surface-brand-subtle)}
 /* ---------- Footer ---------- */
 .footer{background:var(--masthead-bg);color:var(--masthead-muted);padding-block:32px;margin-top:24px;font-size:15px}
 .footer b{color:var(--masthead-fg)}
@@ -671,6 +684,8 @@ input[type=date].control{appearance:auto;-webkit-appearance:auto}
 <ul><li><a href="#guides">सेवा गाइड: नागरिकता, राहदानी, सवारी चालक अनुमतिपत्र, जन्म र विवाह दर्ता, प्यान, जग्गा · Service guides</a></li>
 <li><a href="#sector-universities">विश्वविद्यालय र स्वास्थ्य प्रतिष्ठान: त्रिभुवन, काठमाडौं, पोखरा, पूर्वाञ्चल र अन्य · Universities and health academies</a></li>
 <li><a href="#guide-noc">विदेश अध्ययनका लागि NOC, डिग्री समकक्षता, एसईई र कक्षा १२ नतिजा · Study abroad NOC, degree equivalence, SEE results</a></li>
+<li><a href="#apps">सरकारी मोबाइल एप: नागरिक एप, नेपाल प्रहरी, मोफा मित्र, श्रम संसार · Official government mobile apps</a></li>
+<li><a href="#sector-banking">सरकारी बैंक, कर्मचारी सञ्चय कोष, नागरिक लगानी कोष, बीमा · Government banks, funds and insurance</a></li>
 <li><a href="#offices">७७ जिल्लाका कार्यालय र खुल्ने समय · District offices and opening hours</a></li>
 <li><a href="#map">नेपालको प्रशासनिक नक्सा · Administrative map of Nepal</a></li>
 <li><a href="#holidays">बिदा पात्रो २०८३ · Holiday calendar 2083 BS</a></li>
@@ -757,6 +772,21 @@ const SECTORS = [
   ['महालेखा नियन्त्रक कार्यालय','Financial Comptroller General Office','fcgo.gov.np'],
   ['नेपाल राष्ट्र बैंक','Nepal Rastra Bank','nrb.org.np'],
   ['नेपाल धितोपत्र बोर्ड','Securities Board of Nepal','sebon.gov.np']]},
+ {id:'banking',icon:'account_balance_wallet',ne:'बैंक, कोष तथा बीमा',en:'Banks, Funds & Insurance',sites:[
+  ['नेपाल राष्ट्र बैंक (केन्द्रीय बैंक, गुनासो)','Nepal Rastra Bank (central bank, complaints)','nrb.org.np','Regulator'],
+  ['राष्ट्रिय वाणिज्य बैंक','Rastriya Banijya Bank','rbb.com.np','Government-owned'],
+  ['नेपाल बैंक लिमिटेड','Nepal Bank Limited','nepalbank.com.np','Government majority'],
+  ['कृषि विकास बैंक','Agricultural Development Bank','adbl.gov.np','Government-owned'],
+  ['कर्मचारी सञ्चय कोष','Employees Provident Fund','epf.org.np','Retirement fund'],
+  ['नागरिक लगानी कोष','Citizen Investment Trust','nlk.org.np','Savings & pension'],
+  ['सामाजिक सुरक्षा कोष','Social Security Fund','ssf.gov.np','Contributions & claims'],
+  ['नेपाल बीमा प्राधिकरण (बीमा नियामक, गुनासो)','Nepal Insurance Authority (regulator, complaints)','nia.gov.np','Regulator'],
+  ['राष्ट्रिय जीवन बीमा कम्पनी (साबिक राष्ट्रिय बीमा संस्थान)','Rastriya Jeewan Beema Company (formerly Rastriya Beema Sansthan)','rbs.gov.np','Government life insurer'],
+  ['राष्ट्रिय बीमा कम्पनी','Rastriya Beema Company','rbcl.gov.np','Government general insurer'],
+  ['स्वास्थ्य बीमा बोर्ड','Health Insurance Board','hib.gov.np','Health insurance'],
+  ['सीडीएस एण्ड क्लियरिङ (मेरो शेयर)','CDS and Clearing (MeroShare)','cdsc.com.np','Shares & demat'],
+  ['नेपाल क्लियरिङ हाउस (connectIPS)','Nepal Clearing House (connectIPS)','nchl.com.np','Payments'],
+  ['नेपाल धितोपत्र बोर्ड','Securities Board of Nepal','sebon.gov.np','Regulator']]},
  {id:'education',icon:'school',ne:'शिक्षा, परीक्षा तथा परिषद्',en:'Education, Exams & Councils',sites:[
   ['शिक्षा, विज्ञान तथा प्रविधि मन्त्रालय','Ministry of Education, Science and Technology','moest.gov.np'],
   ['विदेश अध्ययन अनुमति (NOC)','No Objection Certificate for study abroad','noc.moest.gov.np','NOC'],
@@ -856,7 +886,7 @@ const QUICK = [
   {icon:'receipt_long',ne:'स्थायी लेखा नम्बर (प्यान)',en:'PAN registration',descNe:'कर दर्ता',descEn:'Tax registration',domain:'ird.gov.np'},
   {icon:'apartment',ne:'जिल्लाका कार्यालय',en:'District offices',descNe:'७७ जिल्ला, खुल्ने समयसहित',descEn:'77 districts, with opening hours',href:'#offices'},
   {icon:'flight_takeoff',ne:'श्रम स्वीकृति',en:'Labour permit',descNe:'वैदेशिक रोजगार',descEn:'Foreign employment',domain:'dofe.gov.np'},
-  {icon:'smartphone',ne:'नागरिक एप',en:'Nagarik App',descNe:'एउटै एपमा सरकारी सेवा',descEn:'Government services in one app',domain:'nagarikapp.gov.np'}
+  {icon:'install_mobile',ne:'सरकारी मोबाइल एप',en:'Official mobile apps',descNe:'नागरिक एप, प्रहरी, मोफा मित्र',descEn:'Nagarik App, Police, MoFA Mitra',href:'#apps'}
 ];
 
 /* Provincial governments and all 753 local levels.
@@ -901,6 +931,7 @@ const parseRoute = () => {
   if (hsh==='complain') return {view:'complain'};
   if (hsh==='help') return {view:'help'};
   if (hsh==='saved') return {view:'saved'};
+  if (hsh==='apps') return {view:'apps'};
   if (hsh.startsWith('province-')) return {view:'province',id:hsh.slice(9)};
   if (hsh==='sectors') return {view:'sectors'};
   if (hsh.startsWith('sector-')) return {view:'sector',id:hsh.slice(7)};
@@ -938,7 +969,7 @@ function App(){
   const a11y = {textSize,setTextSize,easy,setEasy,contrast,setContrast,uiLang,openLang:()=>setShowLang(true)};
   useEffect(() => {
     const V = {home:['नागरिक सेवा पोर्टल','Citizen Services Portal'],guides:['सेवा गाइड','Service guides'],offices:['जिल्लाका कार्यालय','District offices'],map:['नेपालको नक्सा','Map of Nepal'],
-      sectors:['संघीय निकाय','Federal agencies'],local:['प्रदेश तथा स्थानीय तह','Provinces & local levels'],saved:['सुरक्षित','Saved'],tools:['उपकरण','Tools'],help:['आपतकालीन नम्बर','Emergency numbers'],
+      sectors:['संघीय निकाय','Federal agencies'],local:['प्रदेश तथा स्थानीय तह','Provinces & local levels'],saved:['सुरक्षित','Saved'],apps:['सरकारी मोबाइल एप','Official mobile apps'],tools:['उपकरण','Tools'],help:['आपतकालीन नम्बर','Emergency numbers'],
       holidays:['बिदा पात्रो','Holiday calendar'],calculators:['कर र शुल्क हिसाब','Tax and fee calculators'],checksite:['नक्कली साइट जाँच','Fake-site checker'],complain:['कहाँ उजुरी गर्ने','Where to complain']};
     let name = V[route.view] ? t(V[route.view][0],V[route.view][1]) : '';
     if (route.view==='province'){ const p = PROVINCES.find(x=>x.id===route.id); if (p) name = t(p.ne,p.en); }
@@ -985,7 +1016,7 @@ function App(){
     {href:'#sectors',ne:'संघीय निकाय',en:'Federal',icon:'apps',on:cur==='sectors'||cur==='sector',desk:true},
     {href:'#local',ne:'प्रदेश र पालिका',en:'Provinces & local',icon:'location_city',on:cur==='local'||cur==='province',desk:true},
     {href:'#saved',ne:'सुरक्षित',en:'Saved',icon:'bookmarks',on:cur==='saved',mob:true},
-    {href:'#tools',ne:'उपकरण',en:'Tools',icon:'handyman',on:['tools','help','holidays','calculators','checksite','complain'].includes(cur)}];
+    {href:'#tools',ne:'उपकरण',en:'Tools',icon:'handyman',on:['tools','help','holidays','calculators','checksite','complain','apps'].includes(cur)}];
 
   return h(React.Fragment,null,
     h('header',{className:'masthead'},
@@ -1018,6 +1049,7 @@ function App(){
       cur==='offices' && h(OfficesPage,{t}),
       cur==='district' && h(DistrictPage,{t,lang,slug:route.id}),
       cur==='saved' && h(SavedPage,{t,lang}),
+      cur==='apps' && h(AppsPage,{t}),
       cur==='help' && h(HelpPage,{t}),
       cur==='tools' && h(ToolsPage,{t,lang,a11y,doInstall,installed}),
       cur==='holidays' && h(HolidaysPage,{t,lang}),
@@ -1220,6 +1252,56 @@ const GUIDES = [
   docs:[['शैक्षिक योग्यताका प्रमाणपत्र','Academic certificates for the required level'],['नागरिकता','Citizenship certificate'],['फोटो','Photo']]}
 ].map(g => ({...g,url:'https://'+g.domain+'/'}));
 
+/* =====================================================================
+   Official government mobile apps. Store IDs are taken from the
+   publishers' own store listings (Google Play developer "Government of Nepal",
+   Nepal Police Headquarters) and checked against news of each launch.
+   ===================================================================== */
+const GOV_PLAY_DEV = 'https://play.google.com/store/apps/dev?id=8828719902965931407';
+const APPS = [
+ {id:'nagarik',icon:'smartphone',ne:'नागरिक एप',en:'Nagarik App',byNe:'नेपाल सरकार (प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय)',byEn:'Government of Nepal (Office of the Prime Minister)',
+  descNe:'एउटै एपबाट प्यान दर्ता, प्रहरी प्रतिवेदन, मतदाता परिचयपत्र पूर्वदर्ता, ट्राफिक जरिवाना (ई-चलान) र अन्य सरकारी सेवा।',descEn:'PAN registration, police clearance, voter card pre-registration, traffic fines (e-Chalan) and other government services in one app.',
+  play:'com.yajtech.nagarikapp',ios:'1493013430',web:'nagarikapp.gov.np'},
+ {id:'police',icon:'local_police',ne:'नेपाल प्रहरी',en:'Nepal Police',byNe:'प्रहरी प्रधान कार्यालय, नक्साल',byEn:'Nepal Police Headquarters, Naxal',
+  descNe:'घटनाको सूचना, नजिकको प्रहरी कार्यालय, उजुरी, प्रहरी प्रतिवेदन आवेदन र आपतकालीन नम्बर।',descEn:'Report incidents, find nearby police stations, file complaints, apply for police clearance and see emergency numbers.',
+  play:'com.pathway.nepalpolice',web:'nepalpolice.gov.np'},
+ {id:'mofa',icon:'support',ne:'मोफा मित्र',en:'MoFA Mitra',byNe:'परराष्ट्र मन्त्रालय',byEn:'Ministry of Foreign Affairs',
+  descNe:'विदेशमा समस्यामा परेका नेपालीका लागि उद्धार अनुरोध, उजुरी र दूतावाससँग सिधा सम्पर्क।',descEn:'Rescue requests, complaints and direct contact with embassies for Nepalis in trouble abroad.',
+  play:'gov.np.nepalconsular.rescue.app',web:'mofa.gov.np'},
+ {id:'shramsansar',icon:'work',ne:'श्रम संसार',en:'Shramsansar',byNe:'श्रम, रोजगार तथा सामाजिक सुरक्षा मन्त्रालय र परराष्ट्र मन्त्रालय',byEn:'Ministry of Labour and Ministry of Foreign Affairs',
+  descNe:'विदेशमा काम गर्ने नेपालीको दर्ता, कन्सुलर सहायता र दूतावासबाट श्रम स्वीकृति; नागरिक एपमा पनि उपलब्ध।',descEn:'Registration of Nepalis working abroad, consular help and labour approval through embassies; also inside the Nagarik App.',
+  play:'np.gov.shramsansar',ios:'6747959692',web:'moless.gov.np'},
+ {id:'hami',icon:'flight_takeoff',ne:'हामी (ह्याप्पी माइग्रेसन)',en:'HaMi – Happy Migration',byNe:'श्रम, रोजगार तथा सामाजिक सुरक्षा मन्त्रालय (कोरिया सरकारको सहयोगमा)',byEn:'Ministry of Labour (with support from the Korean government)',
+  descNe:'वैदेशिक रोजगारीमा जान चाहनेका लागि रोजगारी, सीप, आर्थिक योजना र मानसिक स्वास्थ्यसम्बन्धी जानकारी।',descEn:'Information for people planning to work abroad: jobs, skills, financial planning and mental health.',
+  play:'np.gov.hami',ios:'6746324346',web:'moless.gov.np'},
+ {id:'weather',icon:'partly_cloudy_day',ne:'नेपाल मौसम (आधिकारिक)',en:'Nepal Weather Official',byNe:'जल तथा मौसम विज्ञान विभाग',byEn:'Department of Hydrology and Meteorology',
+  descNe:'जल तथा मौसम विज्ञान विभागको आधिकारिक मौसम पूर्वानुमान।',descEn:'Official weather forecasts from the Department of Hydrology and Meteorology.',
+  play:'np.gov.dhm.nepalweather',web:'dhm.gov.np'},
+ {id:'donidcr',icon:'id_card',ne:'राष्ट्रिय परिचयपत्र तथा पञ्जीकरण',en:'National ID and Civil Registration',byNe:'राष्ट्रिय परिचयपत्र तथा पञ्जीकरण विभाग',byEn:'Department of National ID and Civil Registration',
+  descNe:'राष्ट्रिय परिचयपत्र र पञ्जीकरणसम्बन्धी सेवा।',descEn:'National ID and civil registration services.',
+  play:'com.donidcr.panjikaran',web:'donidcr.gov.np'}
+];
+function AppsPage({t}){
+  const store = (href,icon,label) => h('a',{className:'store-btn',href,target:'_blank',rel:'noopener noreferrer'},h(Icon,{name:icon,size:20}),h('span',null,label));
+  return h('div',{className:'wrap',style:{paddingBottom:40}},
+    h(Crumbs,{t,items:[[t('उपकरण','Tools'),'#tools'],[t('सरकारी मोबाइल एप','Official mobile apps')]]}),
+    h('div',{className:'page-title'},h('span',{className:'qicon'},h(Icon,{name:'install_mobile',size:30})),
+      h('div',null,h('h1',null,t('सरकारी निकायका आधिकारिक मोबाइल एप','Official mobile apps of government bodies')),
+        h('p',null,t('प्रकाशकको नाम जाँचेर Google Play वा App Store बाट मात्र इन्स्टल गर्नुहोस्।','Install only from Google Play or the App Store, and check the publisher’s name.')))),
+    h(Notice,{tone:'warning',title:t('नक्कली एपबाट जोगिनुहोस्','Avoid fake apps')},
+      t('SMS, Viber वा फेसबुकमा आएको लिंकबाट APK फाइल इन्स्टल नगर्नुहोस्। सरकारी एपले फोन गरेर OTP वा पासवर्ड माग्दैन।','Never install an APK file from a link sent by SMS, Viber or Facebook. Government apps never call you to ask for an OTP or password.')),
+    h('ul',{className:'app-list'},APPS.map(a => h('li',{key:a.id,className:'app-card'},
+      h('div',{className:'app-head'},h('span',{className:'qicon'},h(Icon,{name:a.icon,size:26})),
+        h('div',{className:'app-name'},h('h2',null,t(a.ne,a.en)),h('p',null,h(Icon,{name:'verified',size:16,fill:1}),' ',t(a.byNe,a.byEn)))),
+      h('p',{className:'app-desc'},t(a.descNe,a.descEn)),
+      h('div',{className:'store-row'},
+        a.play && store('https://play.google.com/store/apps/details?id='+a.play,'shop','Google Play'),
+        a.ios && store('https://apps.apple.com/app/id'+a.ios,'phone_iphone','App Store'),
+        a.web && store('https://'+a.web+'/','language',a.web))))),
+    h('a',{className:'j-link',href:GOV_PLAY_DEV,target:'_blank',rel:'noopener noreferrer',style:{marginTop:16}},h(Icon,{name:'open_in_new',size:18}),t('Google Play मा "Government of Nepal" का सबै एप','All apps by "Government of Nepal" on Google Play')),
+    h('p',{className:'field-hint',style:{marginTop:12}},t('बैंक, बीमा र कोषका एप सम्बन्धित संस्थाको आधिकारिक वेबसाइटबाट मात्र खोज्नुहोस्; ','For bank, insurance and fund apps, follow the link on that institution’s official website; '),h('a',{href:'#sector-banking'},t('बैंक, कोष तथा बीमा','see Banks, Funds & Insurance')),'.'));
+}
+
 function GuidesPage({t}){
   return h('div',{className:'wrap',style:{paddingBottom:40}},
     h(Crumbs,{t,items:[[t('सेवा गाइड','Service guides')]]}),
@@ -1379,6 +1461,7 @@ function ToolsPage({t,lang,a11y,doInstall,installed}){
     ['#complain','campaign','कहाँ उजुरी गर्ने','Where to complain','समस्याअनुसार सही निकाय','The right body for your problem'],
     ['#help','emergency','आपतकालीन तथा हेल्पलाइन','Emergency & helplines','विपद्, मौसम र सुरक्षाका उपाय','Disasters, weather and safety tips'],
     ['#map','map','नेपालको नक्सा','Map of Nepal','प्रदेश, जिल्ला र पालिकाको नक्सा','Provinces, districts and local levels'],
+    ['#apps','install_mobile','सरकारी मोबाइल एप','Official mobile apps','नागरिक एप, नेपाल प्रहरी, मोफा मित्र र अन्य','Nagarik App, Nepal Police, MoFA Mitra and more'],
     ['#guides','menu_book','सेवा गाइड','Service guides','कागजात चेकलिस्टसहित','With document checklists']];
   return h('div',{className:'wrap',style:{paddingBottom:40}},
     h(Crumbs,{t,items:[[t('उपकरण','Tools')]]}),
@@ -2403,6 +2486,8 @@ function searchIndex(){
     ...[['#holidays','event','बिदा पात्रो','Holiday calendar','bida chhutti holiday calendar patro'],['#calculators','calculate','शुल्क र कर हिसाब','Fee and tax calculators','kar aayakar income tax vehicle sawari jagga registration rajistrasan malpot fee shulka'],
         ['#check-site','gpp_good','नक्कली साइट जाँच','Fake-site checker','nakkali fake website link phishing thagi'],['#complain','campaign','कहाँ उजुरी गर्ने','Where to complain','ujuri gunaso complaint ghus bribe corruption bhrastachar'],
         ['#map','map','नेपालको नक्सा','Map of Nepal','naksa naksha map province district palika'],
+        ['#apps','install_mobile','सरकारी मोबाइल एप','Official mobile apps','app mobile nagarik police mofa mitra shram sansar hami weather play store'],
+        ['#sector-banking','account_balance_wallet','बैंक, कोष तथा बीमा','Banks, Funds & Insurance','bank baink beema bima insurance sanchaya kosh epf cit nagarik lagani ssf meroshare connectips rbb adbl'],
         ['#help','emergency','आपतकालीन, विपद् र हेल्पलाइन','Emergency, disaster & helplines','bipad badhi pahiro bhukampa flood earthquake landslide emergency helpline mausam weather']]
       .map(([href,icon,ne,en,kw]) => ({href,icon,ne,en,kindNe:'उपकरण',kindEn:'Tool',text:[ne,en,kw].join(' ')})),
     ...DISTRICTS.map(d => ({href:'#district-'+d.slug,icon:'map',ne:d.ne+' जिल्ला',en:d.en+' District',kindNe:'जिल्लाका कार्यालय',kindEn:'District offices',text:[d.ne,d.en,'jilla district'].join(' ')}))];
