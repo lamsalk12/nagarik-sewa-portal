@@ -35,6 +35,16 @@ Voice search and read-aloud need the app on its own HTTPS address (they are bloc
 | When the next year's holiday list is gazetted (Falgun) | `HOLIDAY_YEAR`, `HOLIDAYS` |
 | Office hours change | `OPEN_MIN`, `isWinter`, `officeHours` |
 
+## Shareable pages
+`guide/<id>/`, `life-event/<id>/`, `district/<slug>/`, `rights/`, `mental-health/` and `safety/` are plain HTML pages generated from the app's data,
+each with its own title, description and sharing image (`og/`). They are what people share and what search engines index.
+- After changing guides, life events, districts, rights, quiz or helpline data in `index.html`: `node tools/build-pages.mjs`
+- New or renamed pages need images: `python3 tools/og-images.py` (Playwright; see the script header)
+- The "Site checks" workflow fails if pages are stale or an image is missing.
+
+## Reporting wrong information
+Every page has a "Report wrong information" link that opens a pre-filled GitHub issue (`.github/ISSUE_TEMPLATE/wrong-info.yml`). Reports are public; the form asks people not to include personal details.
+
 ## SEO and security
 - Search: title, description, canonical URL, Open Graph/Twitter sharing card (`icons/og-image.png`), JSON-LD (WebSite, WebApplication), `sitemap.xml`, crawlable fallback content inside `#root`, per-page titles.
 - To appear in Google faster: add the site in Google Search Console and submit `sitemap.xml`.

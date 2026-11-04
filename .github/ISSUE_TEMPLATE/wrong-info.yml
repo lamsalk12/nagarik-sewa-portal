@@ -1,0 +1,34 @@
+name: गलत जानकारी · Wrong information
+description: Report a wrong link, outdated detail or mistake on the portal.
+title: "Wrong information: "
+labels: [wrong-info]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        धन्यवाद! यो रिपोर्ट सार्वजनिक हुन्छ, त्यसैले नागरिकता नम्बर, फोन नम्बर वा अन्य व्यक्तिगत विवरण नलेख्नुहोस्।
+        Thank you. This report is public, so please do not include citizenship numbers, phone numbers or other personal details.
+  - type: input
+    id: page
+    attributes:
+      label: पृष्ठ · Page
+      description: The page where you saw the problem (filled in automatically when you use the button on the site).
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: के गलत छ? · What is wrong?
+      placeholder: e.g. The website link for this office does not open, or the date is wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: सही जानकारी के हो? · What is correct?
+      placeholder: The correct link, name, date or step, if you know it.
+  - type: input
+    id: source
+    attributes:
+      label: स्रोत · Source
+      description: Where you found the correct information, ideally an official .gov.np page or notice.

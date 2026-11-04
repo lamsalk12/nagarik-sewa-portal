@@ -1,7 +1,7 @@
 /* Citizen Services Portal — service worker
    App shell and self-hosted scripts: cache-first. Google Fonts: stale-while-revalidate.
    Only successful (200) responses are cached. Nothing else leaves the network path. */
-const VERSION = 'nsp-v13';
+const VERSION = 'nsp-v14';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png',
   './map/nepal-map.json', './vendor/react.production.min.js', './vendor/react-dom.production.min.js', './vendor/nepali-date-converter.umd.js'];
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
@@ -23,10 +23,12 @@ self.addEventListener('fetch', e => {
   const url = new URL(req.url);
 
   if (req.mode === 'navigate') {
+    // The app itself lives at the scope root; shareable pages (guide/, district/ …) are cached under their own URL.
+    const isApp = url.pathname === new URL('./', self.registration.scope).pathname || url.pathname.endsWith('/index.html') && url.pathname.split('/').length === new URL('./', self.registration.scope).pathname.split('/').length;
     e.respondWith(fetch(req).then(res => {
-      if (cacheable(res)) { const copy = res.clone(); caches.open(VERSION).then(c => c.put('./index.html', copy)); }
+      if (cacheable(res)) { const copy = res.clone(); caches.open(VERSION).then(c => c.put(isApp ? './index.html' : req, copy)); }
       return res;
-    }).catch(() => caches.match('./index.html')));
+    }).catch(() => caches.match(isApp ? './index.html' : req).then(hit => hit || caches.match('./index.html'))));
     return;
   }
 

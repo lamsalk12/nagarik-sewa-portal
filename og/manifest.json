@@ -1,0 +1,780 @@
+[
+ {
+  "file": "og/guide-citizenship.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "नागरिकता प्रमाणपत्र",
+  "sub": "Citizenship certificate"
+ },
+ {
+  "file": "og/guide-passport.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "राहदानी (ई-पासपोर्ट)",
+  "sub": "Passport (e-passport)"
+ },
+ {
+  "file": "og/guide-licence.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "सवारी चालक अनुमतिपत्र",
+  "sub": "Driving licence"
+ },
+ {
+  "file": "og/guide-nid.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "राष्ट्रिय परिचयपत्र",
+  "sub": "National ID card"
+ },
+ {
+  "file": "og/guide-birth.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "जन्म दर्ता",
+  "sub": "Birth registration"
+ },
+ {
+  "file": "og/guide-marriage.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "विवाह दर्ता",
+  "sub": "Marriage registration"
+ },
+ {
+  "file": "og/guide-pan.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "स्थायी लेखा नम्बर (प्यान)",
+  "sub": "PAN registration"
+ },
+ {
+  "file": "og/guide-company.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "कम्पनी दर्ता",
+  "sub": "Company registration"
+ },
+ {
+  "file": "og/guide-land.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "जग्गा रजिस्ट्रेसन पास",
+  "sub": "Land ownership transfer"
+ },
+ {
+  "file": "og/guide-labour.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "वैदेशिक रोजगार श्रम स्वीकृति",
+  "sub": "Foreign employment labour permit"
+ },
+ {
+  "file": "og/guide-noc.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "विदेश अध्ययनका लागि NOC",
+  "sub": "NOC for studying abroad"
+ },
+ {
+  "file": "og/guide-equivalence.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "विदेशी डिग्रीको समकक्षता",
+  "sub": "Equivalence for a foreign degree"
+ },
+ {
+  "file": "og/guide-results.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "एसईई र कक्षा १२ को नतिजा",
+  "sub": "SEE and Class 12 results"
+ },
+ {
+  "file": "og/guide-mecee.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "चिकित्सा शिक्षा प्रवेश परीक्षा (MECEE)",
+  "sub": "Medical entrance exam (MECEE)"
+ },
+ {
+  "file": "og/guide-teacher.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "शिक्षक अध्यापन अनुमतिपत्र",
+  "sub": "Teaching licence"
+ },
+ {
+  "file": "og/guide-voter.jpg",
+  "label": "सेवा गाइड · Service guide",
+  "title": "पहिलो पटक मतदाता नामावलीमा नाम दर्ता",
+  "sub": "Registering to vote for the first time"
+ },
+ {
+  "file": "og/life-event-study-abroad.jpg",
+  "label": "जीवनका घटना · Life event",
+  "title": "विदेश पढ्न जाँदा",
+  "sub": "Going abroad to study"
+ },
+ {
+  "file": "og/life-event-after-school.jpg",
+  "label": "जीवनका घटना · Life event",
+  "title": "एसईई वा कक्षा १२ पछि",
+  "sub": "After SEE or Class 12"
+ },
+ {
+  "file": "og/life-event-baby.jpg",
+  "label": "जीवनका घटना · Life event",
+  "title": "बच्चा जन्मँदा",
+  "sub": "Having a baby"
+ },
+ {
+  "file": "og/life-event-sixteen.jpg",
+  "label": "जीवनका घटना · Life event",
+  "title": "१६ वर्ष पुग्दा",
+  "sub": "Turning 16"
+ },
+ {
+  "file": "og/life-event-abroad.jpg",
+  "label": "जीवनका घटना · Life event",
+  "title": "वैदेशिक रोजगारीमा जाँदा",
+  "sub": "Going abroad for work"
+ },
+ {
+  "file": "og/life-event-business.jpg",
+  "label": "जीवनका घटना · Life event",
+  "title": "सानो व्यवसाय सुरु गर्दा",
+  "sub": "Starting a small business"
+ },
+ {
+  "file": "og/life-event-moving.jpg",
+  "label": "जीवनका घटना · Life event",
+  "title": "बसाइँ सर्दा",
+  "sub": "Moving to a new place"
+ },
+ {
+  "file": "og/life-event-death.jpg",
+  "label": "जीवनका घटना · Life event",
+  "title": "परिवारमा मृत्यु हुँदा",
+  "sub": "When a family member dies"
+ },
+ {
+  "file": "og/district-bhojpur.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "भोजपुर जिल्ला",
+  "sub": "Bhojpur District · 9 local levels",
+  "district": "bhojpur",
+  "province": 1
+ },
+ {
+  "file": "og/district-dhankuta.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "धनकुटा जिल्ला",
+  "sub": "Dhankuta District · 7 local levels",
+  "district": "dhankuta",
+  "province": 1
+ },
+ {
+  "file": "og/district-ilam.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "इलाम जिल्ला",
+  "sub": "Ilam District · 10 local levels",
+  "district": "ilam",
+  "province": 1
+ },
+ {
+  "file": "og/district-jhapa.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "झापा जिल्ला",
+  "sub": "Jhapa District · 15 local levels",
+  "district": "jhapa",
+  "province": 1
+ },
+ {
+  "file": "og/district-khotang.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "खोटाँग जिल्ला",
+  "sub": "Khotang District · 10 local levels",
+  "district": "khotang",
+  "province": 1
+ },
+ {
+  "file": "og/district-morang.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "मोरंग जिल्ला",
+  "sub": "Morang District · 17 local levels",
+  "district": "morang",
+  "province": 1
+ },
+ {
+  "file": "og/district-okhaldhunga.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "ओखलढुंगा जिल्ला",
+  "sub": "Okhaldhunga District · 8 local levels",
+  "district": "okhaldhunga",
+  "province": 1
+ },
+ {
+  "file": "og/district-panchthar.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "पांचथर जिल्ला",
+  "sub": "Panchthar District · 8 local levels",
+  "district": "panchthar",
+  "province": 1
+ },
+ {
+  "file": "og/district-sankhuwasabha.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "संखुवासभा जिल्ला",
+  "sub": "Sankhuwasabha District · 10 local levels",
+  "district": "sankhuwasabha",
+  "province": 1
+ },
+ {
+  "file": "og/district-solukhumbu.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "सोलुखुम्बू जिल्ला",
+  "sub": "Solukhumbu District · 8 local levels",
+  "district": "solukhumbu",
+  "province": 1
+ },
+ {
+  "file": "og/district-sunsari.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "सुनसरी जिल्ला",
+  "sub": "Sunsari District · 12 local levels",
+  "district": "sunsari",
+  "province": 1
+ },
+ {
+  "file": "og/district-taplejung.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "ताप्लेजुंग जिल्ला",
+  "sub": "Taplejung District · 9 local levels",
+  "district": "taplejung",
+  "province": 1
+ },
+ {
+  "file": "og/district-terhathum.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "तेह्रथुम जिल्ला",
+  "sub": "Terhathum District · 6 local levels",
+  "district": "terhathum",
+  "province": 1
+ },
+ {
+  "file": "og/district-udayapur.jpg",
+  "label": "कोशी प्रदेश · Koshi Province",
+  "title": "उदयपुर जिल्ला",
+  "sub": "Udayapur District · 8 local levels",
+  "district": "udayapur",
+  "province": 1
+ },
+ {
+  "file": "og/district-bara.jpg",
+  "label": "मधेश प्रदेश · Madhesh Province",
+  "title": "बारा जिल्ला",
+  "sub": "Bara District · 16 local levels",
+  "district": "bara",
+  "province": 2
+ },
+ {
+  "file": "og/district-dhanusha.jpg",
+  "label": "मधेश प्रदेश · Madhesh Province",
+  "title": "धनुषा जिल्ला",
+  "sub": "Dhanusha District · 18 local levels",
+  "district": "dhanusha",
+  "province": 2
+ },
+ {
+  "file": "og/district-mahottari.jpg",
+  "label": "मधेश प्रदेश · Madhesh Province",
+  "title": "महोत्तरी जिल्ला",
+  "sub": "Mahottari District · 15 local levels",
+  "district": "mahottari",
+  "province": 2
+ },
+ {
+  "file": "og/district-parsa.jpg",
+  "label": "मधेश प्रदेश · Madhesh Province",
+  "title": "पर्सा जिल्ला",
+  "sub": "Parsa District · 14 local levels",
+  "district": "parsa",
+  "province": 2
+ },
+ {
+  "file": "og/district-rautahat.jpg",
+  "label": "मधेश प्रदेश · Madhesh Province",
+  "title": "रौतहट जिल्ला",
+  "sub": "Rautahat District · 18 local levels",
+  "district": "rautahat",
+  "province": 2
+ },
+ {
+  "file": "og/district-saptari.jpg",
+  "label": "मधेश प्रदेश · Madhesh Province",
+  "title": "सप्तरी जिल्ला",
+  "sub": "Saptari District · 18 local levels",
+  "district": "saptari",
+  "province": 2
+ },
+ {
+  "file": "og/district-sarlahi.jpg",
+  "label": "मधेश प्रदेश · Madhesh Province",
+  "title": "सर्लाही जिल्ला",
+  "sub": "Sarlahi District · 20 local levels",
+  "district": "sarlahi",
+  "province": 2
+ },
+ {
+  "file": "og/district-siraha.jpg",
+  "label": "मधेश प्रदेश · Madhesh Province",
+  "title": "सिराहा जिल्ला",
+  "sub": "Siraha District · 17 local levels",
+  "district": "siraha",
+  "province": 2
+ },
+ {
+  "file": "og/district-bhaktapur.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "भक्तपुर जिल्ला",
+  "sub": "Bhaktapur District · 4 local levels",
+  "district": "bhaktapur",
+  "province": 3
+ },
+ {
+  "file": "og/district-chitwan.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "चितवन जिल्ला",
+  "sub": "Chitwan District · 7 local levels",
+  "district": "chitwan",
+  "province": 3
+ },
+ {
+  "file": "og/district-dhading.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "धादिंङ्ग जिल्ला",
+  "sub": "Dhading District · 13 local levels",
+  "district": "dhading",
+  "province": 3
+ },
+ {
+  "file": "og/district-dolakha.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "दोलखा जिल्ला",
+  "sub": "Dolakha District · 9 local levels",
+  "district": "dolakha",
+  "province": 3
+ },
+ {
+  "file": "og/district-kathmandu.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "काठमाडौँ जिल्ला",
+  "sub": "Kathmandu District · 11 local levels",
+  "district": "kathmandu",
+  "province": 3
+ },
+ {
+  "file": "og/district-kavrepalanchok.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "काभ्रेपलान्चोक जिल्ला",
+  "sub": "Kavrepalanchok District · 13 local levels",
+  "district": "kavrepalanchok",
+  "province": 3
+ },
+ {
+  "file": "og/district-lalitpur.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "ललितपुर जिल्ला",
+  "sub": "Lalitpur District · 6 local levels",
+  "district": "lalitpur",
+  "province": 3
+ },
+ {
+  "file": "og/district-makwanpur.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "मकवानपुर जिल्ला",
+  "sub": "Makwanpur District · 10 local levels",
+  "district": "makwanpur",
+  "province": 3
+ },
+ {
+  "file": "og/district-nuwakot.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "नुवाकोट जिल्ला",
+  "sub": "Nuwakot District · 12 local levels",
+  "district": "nuwakot",
+  "province": 3
+ },
+ {
+  "file": "og/district-ramechhap.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "रामेछाप जिल्ला",
+  "sub": "Ramechhap District · 8 local levels",
+  "district": "ramechhap",
+  "province": 3
+ },
+ {
+  "file": "og/district-rasuwa.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "रसुवा जिल्ला",
+  "sub": "Rasuwa District · 5 local levels",
+  "district": "rasuwa",
+  "province": 3
+ },
+ {
+  "file": "og/district-sindhuli.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "सिन्धुली जिल्ला",
+  "sub": "Sindhuli District · 9 local levels",
+  "district": "sindhuli",
+  "province": 3
+ },
+ {
+  "file": "og/district-sindhupalchok.jpg",
+  "label": "बागमती प्रदेश · Bagmati Province",
+  "title": "सिन्धुपाल्चोक जिल्ला",
+  "sub": "Sindhupalchok District · 12 local levels",
+  "district": "sindhupalchok",
+  "province": 3
+ },
+ {
+  "file": "og/district-baglung.jpg",
+  "label": "गण्डकी प्रदेश · Gandaki Province",
+  "title": "बागलुङ जिल्ला",
+  "sub": "Baglung District · 10 local levels",
+  "district": "baglung",
+  "province": 4
+ },
+ {
+  "file": "og/district-gorkha.jpg",
+  "label": "गण्डकी प्रदेश · Gandaki Province",
+  "title": "गोरखा जिल्ला",
+  "sub": "Gorkha District · 11 local levels",
+  "district": "gorkha",
+  "province": 4
+ },
+ {
+  "file": "og/district-kaski.jpg",
+  "label": "गण्डकी प्रदेश · Gandaki Province",
+  "title": "कास्की जिल्ला",
+  "sub": "Kaski District · 5 local levels",
+  "district": "kaski",
+  "province": 4
+ },
+ {
+  "file": "og/district-lamjung.jpg",
+  "label": "गण्डकी प्रदेश · Gandaki Province",
+  "title": "लमजुङ जिल्ला",
+  "sub": "Lamjung District · 8 local levels",
+  "district": "lamjung",
+  "province": 4
+ },
+ {
+  "file": "og/district-manang.jpg",
+  "label": "गण्डकी प्रदेश · Gandaki Province",
+  "title": "मनाङ जिल्ला",
+  "sub": "Manang District · 4 local levels",
+  "district": "manang",
+  "province": 4
+ },
+ {
+  "file": "og/district-mustang.jpg",
+  "label": "गण्डकी प्रदेश · Gandaki Province",
+  "title": "मुस्ताङ जिल्ला",
+  "sub": "Mustang District · 5 local levels",
+  "district": "mustang",
+  "province": 4
+ },
+ {
+  "file": "og/district-myagdi.jpg",
+  "label": "गण्डकी प्रदेश · Gandaki Province",
+  "title": "म्याग्दी जिल्ला",
+  "sub": "Myagdi District · 6 local levels",
+  "district": "myagdi",
+  "province": 4
+ },
+ {
+  "file": "og/district-nawalpur.jpg",
+  "label": "गण्डकी प्रदेश · Gandaki Province",
+  "title": "नवलपुर जिल्ला",
+  "sub": "Nawalpur District · 8 local levels",
+  "district": "nawalpur",
+  "province": 4
+ },
+ {
+  "file": "og/district-parbat.jpg",
+  "label": "गण्डकी प्रदेश · Gandaki Province",
+  "title": "पर्वत जिल्ला",
+  "sub": "Parbat District · 7 local levels",
+  "district": "parbat",
+  "province": 4
+ },
+ {
+  "file": "og/district-syangja.jpg",
+  "label": "गण्डकी प्रदेश · Gandaki Province",
+  "title": "स्याङग्जा जिल्ला",
+  "sub": "Syangja District · 11 local levels",
+  "district": "syangja",
+  "province": 4
+ },
+ {
+  "file": "og/district-tanahun.jpg",
+  "label": "गण्डकी प्रदेश · Gandaki Province",
+  "title": "तनहुँ जिल्ला",
+  "sub": "Tanahun District · 10 local levels",
+  "district": "tanahun",
+  "province": 4
+ },
+ {
+  "file": "og/district-arghakhanchi.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "अर्घाखाँची जिल्ला",
+  "sub": "Arghakhanchi District · 6 local levels",
+  "district": "arghakhanchi",
+  "province": 5
+ },
+ {
+  "file": "og/district-banke.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "बाँके जिल्ला",
+  "sub": "Banke District · 8 local levels",
+  "district": "banke",
+  "province": 5
+ },
+ {
+  "file": "og/district-bardiya.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "बर्दिया जिल्ला",
+  "sub": "Bardiya District · 8 local levels",
+  "district": "bardiya",
+  "province": 5
+ },
+ {
+  "file": "og/district-dang.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "दाङ जिल्ला",
+  "sub": "Dang District · 10 local levels",
+  "district": "dang",
+  "province": 5
+ },
+ {
+  "file": "og/district-easternrukum.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "पूर्वी रूकुम जिल्ला",
+  "sub": "Eastern Rukum District · 3 local levels",
+  "district": "easternrukum",
+  "province": 5
+ },
+ {
+  "file": "og/district-gulmi.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "गुल्मी जिल्ला",
+  "sub": "Gulmi District · 12 local levels",
+  "district": "gulmi",
+  "province": 5
+ },
+ {
+  "file": "og/district-kapilvastu.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "कपिलवस्तु जिल्ला",
+  "sub": "Kapilvastu District · 10 local levels",
+  "district": "kapilvastu",
+  "province": 5
+ },
+ {
+  "file": "og/district-palpa.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "पाल्पा जिल्ला",
+  "sub": "Palpa District · 10 local levels",
+  "district": "palpa",
+  "province": 5
+ },
+ {
+  "file": "og/district-parasi.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "परासी जिल्ला",
+  "sub": "Parasi District · 7 local levels",
+  "district": "parasi",
+  "province": 5
+ },
+ {
+  "file": "og/district-pyuthan.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "प्युठान जिल्ला",
+  "sub": "Pyuthan District · 9 local levels",
+  "district": "pyuthan",
+  "province": 5
+ },
+ {
+  "file": "og/district-rolpa.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "रोल्पा जिल्ला",
+  "sub": "Rolpa District · 10 local levels",
+  "district": "rolpa",
+  "province": 5
+ },
+ {
+  "file": "og/district-rupandehi.jpg",
+  "label": "लुम्बिनी प्रदेश · Lumbini Province",
+  "title": "रुपन्देही जिल्ला",
+  "sub": "Rupandehi District · 16 local levels",
+  "district": "rupandehi",
+  "province": 5
+ },
+ {
+  "file": "og/district-dailekh.jpg",
+  "label": "कर्णाली प्रदेश · Karnali Province",
+  "title": "दैलेख जिल्ला",
+  "sub": "Dailekh District · 11 local levels",
+  "district": "dailekh",
+  "province": 6
+ },
+ {
+  "file": "og/district-dolpa.jpg",
+  "label": "कर्णाली प्रदेश · Karnali Province",
+  "title": "डोल्पा जिल्ला",
+  "sub": "Dolpa District · 8 local levels",
+  "district": "dolpa",
+  "province": 6
+ },
+ {
+  "file": "og/district-humla.jpg",
+  "label": "कर्णाली प्रदेश · Karnali Province",
+  "title": "हुम्ला जिल्ला",
+  "sub": "Humla District · 7 local levels",
+  "district": "humla",
+  "province": 6
+ },
+ {
+  "file": "og/district-jajarkot.jpg",
+  "label": "कर्णाली प्रदेश · Karnali Province",
+  "title": "जाजरकोट जिल्ला",
+  "sub": "Jajarkot District · 7 local levels",
+  "district": "jajarkot",
+  "province": 6
+ },
+ {
+  "file": "og/district-jumla.jpg",
+  "label": "कर्णाली प्रदेश · Karnali Province",
+  "title": "जुम्ला जिल्ला",
+  "sub": "Jumla District · 8 local levels",
+  "district": "jumla",
+  "province": 6
+ },
+ {
+  "file": "og/district-kalikot.jpg",
+  "label": "कर्णाली प्रदेश · Karnali Province",
+  "title": "कालिकोट जिल्ला",
+  "sub": "Kalikot District · 9 local levels",
+  "district": "kalikot",
+  "province": 6
+ },
+ {
+  "file": "og/district-mugu.jpg",
+  "label": "कर्णाली प्रदेश · Karnali Province",
+  "title": "मुगु जिल्ला",
+  "sub": "Mugu District · 4 local levels",
+  "district": "mugu",
+  "province": 6
+ },
+ {
+  "file": "og/district-salyan.jpg",
+  "label": "कर्णाली प्रदेश · Karnali Province",
+  "title": "सल्यान जिल्ला",
+  "sub": "Salyan District · 10 local levels",
+  "district": "salyan",
+  "province": 6
+ },
+ {
+  "file": "og/district-surkhet.jpg",
+  "label": "कर्णाली प्रदेश · Karnali Province",
+  "title": "सुर्खेत जिल्ला",
+  "sub": "Surkhet District · 9 local levels",
+  "district": "surkhet",
+  "province": 6
+ },
+ {
+  "file": "og/district-westernrukum.jpg",
+  "label": "कर्णाली प्रदेश · Karnali Province",
+  "title": "रुकुम पश्चिम जिल्ला",
+  "sub": "Western Rukum District · 6 local levels",
+  "district": "westernrukum",
+  "province": 6
+ },
+ {
+  "file": "og/district-achham.jpg",
+  "label": "सुदूरपश्चिम प्रदेश · Sudurpashchim Province",
+  "title": "अछाम जिल्ला",
+  "sub": "Achham District · 10 local levels",
+  "district": "achham",
+  "province": 7
+ },
+ {
+  "file": "og/district-baitadi.jpg",
+  "label": "सुदूरपश्चिम प्रदेश · Sudurpashchim Province",
+  "title": "बैतडी जिल्ला",
+  "sub": "Baitadi District · 10 local levels",
+  "district": "baitadi",
+  "province": 7
+ },
+ {
+  "file": "og/district-bajhang.jpg",
+  "label": "सुदूरपश्चिम प्रदेश · Sudurpashchim Province",
+  "title": "बझाङ जिल्ला",
+  "sub": "Bajhang District · 12 local levels",
+  "district": "bajhang",
+  "province": 7
+ },
+ {
+  "file": "og/district-bajura.jpg",
+  "label": "सुदूरपश्चिम प्रदेश · Sudurpashchim Province",
+  "title": "बाजुरा जिल्ला",
+  "sub": "Bajura District · 9 local levels",
+  "district": "bajura",
+  "province": 7
+ },
+ {
+  "file": "og/district-dadeldhura.jpg",
+  "label": "सुदूरपश्चिम प्रदेश · Sudurpashchim Province",
+  "title": "डडेलधुरा जिल्ला",
+  "sub": "Dadeldhura District · 7 local levels",
+  "district": "dadeldhura",
+  "province": 7
+ },
+ {
+  "file": "og/district-darchula.jpg",
+  "label": "सुदूरपश्चिम प्रदेश · Sudurpashchim Province",
+  "title": "दार्चुला जिल्ला",
+  "sub": "Darchula District · 9 local levels",
+  "district": "darchula",
+  "province": 7
+ },
+ {
+  "file": "og/district-doti.jpg",
+  "label": "सुदूरपश्चिम प्रदेश · Sudurpashchim Province",
+  "title": "डोटी जिल्ला",
+  "sub": "Doti District · 9 local levels",
+  "district": "doti",
+  "province": 7
+ },
+ {
+  "file": "og/district-kailali.jpg",
+  "label": "सुदूरपश्चिम प्रदेश · Sudurpashchim Province",
+  "title": "कैलाली जिल्ला",
+  "sub": "Kailali District · 13 local levels",
+  "district": "kailali",
+  "province": 7
+ },
+ {
+  "file": "og/district-kanchanpur.jpg",
+  "label": "सुदूरपश्चिम प्रदेश · Sudurpashchim Province",
+  "title": "कञ्चनपुर जिल्ला",
+  "sub": "Kanchanpur District · 9 local levels",
+  "district": "kanchanpur",
+  "province": 7
+ },
+ {
+  "file": "og/rights.jpg",
+  "label": "युवाका लागि · For young people",
+  "title": "आफ्ना अधिकार जान्नुहोस्",
+  "sub": "Know your rights"
+ },
+ {
+  "file": "og/mental-health.jpg",
+  "label": "युवाका लागि · For young people",
+  "title": "तपाईं एक्लो हुनुहुन्न",
+  "sub": "Mental health support · Helpline 1166"
+ },
+ {
+  "file": "og/safety.jpg",
+  "label": "युवाका लागि · For young people",
+  "title": "अनलाइन ठगीबाट बच्नुहोस्",
+  "sub": "Stay safe from online scams · 10-question quiz"
+ }
+]

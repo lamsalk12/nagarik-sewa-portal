@@ -15,6 +15,8 @@ jobs:
           node-version: 20
       - name: Content-Security-Policy matches the inline script
         run: node tools/csp.mjs
+      - name: Shareable pages match the app data
+        run: node tools/build-pages.mjs --check
       - name: Inline script has no syntax errors
         run: |
           node -e "const s=require('fs').readFileSync('index.html','utf8');const m=[...s.matchAll(/<script>([\s\S]*?)<\/script>/g)];require('fs').writeFileSync('/tmp/app.js',m[m.length-1][1])"

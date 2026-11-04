@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-nbRGKcvx1Dh0cEKsRkM2i/2KeCUjN3VlcUHWPU11wmE='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-F0QsIaA/dd6k5tIUYSyCsd+4UWVV78OW3qD1elE9KS4='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>नागरिक सेवा पोर्टल · Nepal government services directory</title>
 <meta name="description" content="नेपालका संघीय निकाय, ७ प्रदेश, ७७ जिल्ला र ७५३ स्थानीय तहका आधिकारिक वेबसाइट, सेवा गाइड, बिदा पात्रो, कर हिसाब र नक्सा एकै ठाउँमा। Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.">
@@ -360,7 +360,10 @@ input[type=date].control{appearance:auto;-webkit-appearance:auto}
 .select-caret{position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--text-muted)}
 .field-error{display:flex;gap:6px;align-items:flex-start;font-size:14.5px;font-weight:600;color:var(--status-danger-fg)}
 .help-list{list-style:none;margin:0;padding:0;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden}
-.help-list li{display:flex;align-items:center;gap:14px;padding:12px 0 12px 18px}
+.help-list{container-type:inline-size}
+.help-list li{display:flex;align-items:center;gap:14px;padding:12px 0 12px 18px;flex-wrap:wrap}
+.help-list .help-num{white-space:nowrap}
+@container (max-width:560px){.help-list li{column-gap:12px;row-gap:2px;padding-right:12px}.help-list .help-txt{flex:1 1 calc(100% - 70px)}.help-list .help-num{margin-left:58px;padding-left:0}.help-list li .mini-btn{margin-left:auto}}
 .help-list li+li{border-top:1px solid var(--border-subtle)}
 .help-list li.urgent .qicon{background:var(--status-danger-bg);color:var(--status-danger-fg)}
 .help-txt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.35}
@@ -624,6 +627,47 @@ input[type=date].control{appearance:auto;-webkit-appearance:auto}
 .map-teaser:hover .map-box{border-color:var(--brand-primary)}
 :root[data-contrast="high"] .map-box path{stroke:var(--text-strong)}
 
+/* ---------- Youth ---------- */
+.youth-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:900px){.youth-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.youth-card{display:flex;align-items:center;gap:12px;padding:14px;border-radius:var(--radius-lg);background:var(--surface-card);border:1px solid var(--border-subtle);text-decoration:none;color:var(--text-strong);font-weight:600;line-height:1.3;min-height:72px}
+.youth-card:hover{border-color:var(--brand-secondary)}
+.y-icon{width:44px;height:44px;flex:none;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--status-danger-bg);color:var(--brand-secondary)}
+.report-bar{border-top:1px solid var(--border-subtle);background:var(--surface-sunken);padding-block:14px;margin-top:24px}
+.report-inner{display:flex;align-items:center;justify-content:space-between;gap:10px 16px;flex-wrap:wrap}
+.report-inner p{display:flex;align-items:center;gap:8px;color:var(--text-strong);font-weight:500}
+.report-inner p .ms{color:var(--text-muted)}
+.report-actions{display:flex;gap:8px;flex-wrap:wrap}
+.report-note{font-size:13px;color:var(--text-muted);margin-top:6px}
+/* quiz */
+.quiz{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.quiz-q{background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:18px}
+.quiz-text{display:flex;gap:12px;align-items:flex-start;color:var(--text-strong);font-weight:600;font-size:17px;line-height:1.45}
+.quiz-no{width:30px;height:30px;flex:none;border-radius:50%;background:var(--brand-primary);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-size:14px}
+.quiz-opts{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.quiz-opt{display:flex;align-items:center;gap:10px;width:100%;text-align:left;min-height:48px;padding:10px 14px;border-radius:var(--radius-md);border:1.5px solid var(--border-strong);background:var(--surface-card);color:var(--text-strong);font-size:15.5px;cursor:pointer;line-height:1.4}
+.quiz-opt:hover:not(:disabled){border-color:var(--brand-primary);background:var(--surface-brand-subtle)}
+.quiz-opt:disabled{cursor:default}
+.quiz-opt.right{border-color:var(--status-success-fg);background:var(--status-success-bg);color:var(--text-strong)}
+.quiz-opt.right .ms{color:var(--status-success-fg)}
+.quiz-opt.wrong{border-color:var(--status-danger-fg);background:var(--status-danger-bg)}
+.quiz-opt.wrong .ms{color:var(--status-danger-fg)}
+.quiz-opt.dim{opacity:.6}
+.quiz-why{margin-top:10px;padding:10px 14px;border-radius:var(--radius-md);line-height:1.5}
+.quiz-why.ok{background:var(--status-success-bg);color:var(--text-strong)}
+.quiz-why.no{background:var(--status-warning-bg);color:var(--text-strong)}
+.quiz-score{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:16px;padding:16px 18px;border-radius:var(--radius-lg);background:var(--surface-brand-subtle);font-size:16px;color:var(--text-strong)}
+/* rights & mental health */
+.rights-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:16px}
+@media (max-width:760px){.rights-grid{grid-template-columns:1fr}}
+.rights-card{display:flex;flex-direction:column;gap:10px}
+.rights-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.rights-list li{display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.rights-list .ms{color:var(--status-success-fg);margin-top:3px}
+.rights-src{font-size:13.5px;color:var(--text-muted)}
+.rights-card .j-link{margin-top:auto}
+.qicon.calm{background:var(--status-info-bg);color:var(--status-info-fg)}
+.notice-danger a{color:var(--status-danger-fg);font-weight:700}
 /* ---------- Official apps ---------- */
 .app-list{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
 @media (max-width:420px){.app-list{grid-template-columns:1fr}}
@@ -681,12 +725,13 @@ input[type=date].control{appearance:auto;-webkit-appearance:auto}
 <h1>नागरिक सेवा पोर्टल · Citizen Services Portal</h1>
 <p>नेपालका संघीय निकाय, ७ प्रदेश, ७७ जिल्ला र ७५३ स्थानीय तहका आधिकारिक वेबसाइट, सेवा गाइड, बिदा पात्रो, कर हिसाब र नक्सा एकै ठाउँमा।</p><p lang="en">Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.</p>
 <h2>सेवा र उपकरण · Services and tools</h2>
-<ul><li><a href="#guides">सेवा गाइड: नागरिकता, राहदानी, सवारी चालक अनुमतिपत्र, जन्म र विवाह दर्ता, प्यान, जग्गा · Service guides</a></li>
+<ul><li><a href="guide/">सेवा गाइड: नागरिकता, राहदानी, सवारी चालक अनुमतिपत्र, जन्म र विवाह दर्ता, प्यान, जग्गा · Service guides</a></li>
 <li><a href="#sector-universities">विश्वविद्यालय र स्वास्थ्य प्रतिष्ठान: त्रिभुवन, काठमाडौं, पोखरा, पूर्वाञ्चल र अन्य · Universities and health academies</a></li>
-<li><a href="#guide-noc">विदेश अध्ययनका लागि NOC, डिग्री समकक्षता, एसईई र कक्षा १२ नतिजा · Study abroad NOC, degree equivalence, SEE results</a></li>
+<li><a href="guide/noc/">विदेश अध्ययनका लागि NOC, डिग्री समकक्षता, एसईई र कक्षा १२ नतिजा · Study abroad NOC, degree equivalence, SEE results</a></li>
+<li><a href="guide/voter/">पहिलो पटक मतदाता दर्ता · Register to vote</a> · <a href="safety/">अनलाइन ठगीबाट बच्नुहोस् · Scam safety</a> · <a href="rights/">आफ्ना अधिकार · Know your rights</a> · <a href="mental-health/">मानसिक स्वास्थ्य सहायता · Mental health support</a> · <a href="life-event/business/">सानो व्यवसाय · Small business</a></li>
 <li><a href="#apps">सरकारी मोबाइल एप: नागरिक एप, नेपाल प्रहरी, मोफा मित्र, श्रम संसार · Official government mobile apps</a></li>
 <li><a href="#sector-banking">सरकारी बैंक, कर्मचारी सञ्चय कोष, नागरिक लगानी कोष, बीमा · Government banks, funds and insurance</a></li>
-<li><a href="#offices">७७ जिल्लाका कार्यालय र खुल्ने समय · District offices and opening hours</a></li>
+<li><a href="district/">७७ जिल्लाका कार्यालय र खुल्ने समय · District offices and opening hours</a></li>
 <li><a href="#map">नेपालको प्रशासनिक नक्सा · Administrative map of Nepal</a></li>
 <li><a href="#holidays">बिदा पात्रो २०८३ · Holiday calendar 2083 BS</a></li>
 <li><a href="#calculators">आयकर, सवारी कर र जग्गा रजिस्ट्रेसन हिसाब · Tax and fee calculators</a></li>
@@ -932,6 +977,10 @@ const parseRoute = () => {
   if (hsh==='help') return {view:'help'};
   if (hsh==='saved') return {view:'saved'};
   if (hsh==='apps') return {view:'apps'};
+  if (hsh==='youth') return {view:'youth'};
+  if (hsh==='safety') return {view:'safety'};
+  if (hsh==='rights') return {view:'rights'};
+  if (hsh==='mental-health') return {view:'mental-health'};
   if (hsh.startsWith('province-')) return {view:'province',id:hsh.slice(9)};
   if (hsh==='sectors') return {view:'sectors'};
   if (hsh.startsWith('sector-')) return {view:'sector',id:hsh.slice(7)};
@@ -969,7 +1018,7 @@ function App(){
   const a11y = {textSize,setTextSize,easy,setEasy,contrast,setContrast,uiLang,openLang:()=>setShowLang(true)};
   useEffect(() => {
     const V = {home:['नागरिक सेवा पोर्टल','Citizen Services Portal'],guides:['सेवा गाइड','Service guides'],offices:['जिल्लाका कार्यालय','District offices'],map:['नेपालको नक्सा','Map of Nepal'],
-      sectors:['संघीय निकाय','Federal agencies'],local:['प्रदेश तथा स्थानीय तह','Provinces & local levels'],saved:['सुरक्षित','Saved'],apps:['सरकारी मोबाइल एप','Official mobile apps'],tools:['उपकरण','Tools'],help:['आपतकालीन नम्बर','Emergency numbers'],
+      sectors:['संघीय निकाय','Federal agencies'],local:['प्रदेश तथा स्थानीय तह','Provinces & local levels'],saved:['सुरक्षित','Saved'],apps:['सरकारी मोबाइल एप','Official mobile apps'],youth:['युवाका लागि','For young people'],safety:['अनलाइन ठगीबाट बच्नुहोस्','Stay safe from online scams'],rights:['आफ्ना अधिकार जान्नुहोस्','Know your rights'],'mental-health':['मानसिक स्वास्थ्य सहायता','Mental health support'],tools:['उपकरण','Tools'],help:['आपतकालीन नम्बर','Emergency numbers'],
       holidays:['बिदा पात्रो','Holiday calendar'],calculators:['कर र शुल्क हिसाब','Tax and fee calculators'],checksite:['नक्कली साइट जाँच','Fake-site checker'],complain:['कहाँ उजुरी गर्ने','Where to complain']};
     let name = V[route.view] ? t(V[route.view][0],V[route.view][1]) : '';
     if (route.view==='province'){ const p = PROVINCES.find(x=>x.id===route.id); if (p) name = t(p.ne,p.en); }
@@ -1050,6 +1099,10 @@ function App(){
       cur==='district' && h(DistrictPage,{t,lang,slug:route.id}),
       cur==='saved' && h(SavedPage,{t,lang}),
       cur==='apps' && h(AppsPage,{t}),
+      cur==='youth' && h(YouthPage,{t}),
+      cur==='safety' && h(SafetyPage,{t}),
+      cur==='rights' && h(RightsPage,{t}),
+      cur==='mental-health' && h(MentalHealthPage,{t}),
       cur==='help' && h(HelpPage,{t}),
       cur==='tools' && h(ToolsPage,{t,lang,a11y,doInstall,installed}),
       cur==='holidays' && h(HolidaysPage,{t,lang}),
@@ -1057,6 +1110,7 @@ function App(){
       cur==='checksite' && h(SiteCheckPage,{t}),
       cur==='complain' && h(ComplainPage,{t}),
       cur==='map' && h(MapPage,{t,lang,id:route.id})),
+    h(ReportBar,{t,route}),
     h(Footer,{t}),
     h('nav',{className:'tabbar','aria-label':t('एप नेभिगेसन','App navigation')},
       navItems.filter(n=>!n.desk).map(n => h('a',{key:n.href,href:n.href,'aria-current':n.on?'page':undefined},h(Icon,{name:n.icon,size:24}),h('span',null,t(n.ne,n.en))))),
@@ -1249,7 +1303,18 @@ const GUIDES = [
    ['तह (प्राथमिक, निम्न माध्यमिक, माध्यमिक) र विषय छान्नुहोस्; शुल्क तिर्नुहोस्।','Choose the level and subject, and pay the fee.'],
    ['लिखित परीक्षा दिनुहोस्।','Sit the written exam.'],
    ['उत्तीर्ण भएपछि अध्यापन अनुमतिपत्र लिनुहोस्; यसबिना सरकारी वा निजी विद्यालयमा पढाउन पाइँदैन।','Once you pass, collect your teaching licence; you need it to teach in public or private schools.']],
-  docs:[['शैक्षिक योग्यताका प्रमाणपत्र','Academic certificates for the required level'],['नागरिकता','Citizenship certificate'],['फोटो','Photo']]}
+  docs:[['शैक्षिक योग्यताका प्रमाणपत्र','Academic certificates for the required level'],['नागरिकता','Citizenship certificate'],['फोटो','Photo']]},
+ {id:'voter',icon:'how_to_vote',ne:'पहिलो पटक मतदाता नामावलीमा नाम दर्ता',en:'Registering to vote for the first time',
+  officeNe:'निर्वाचन आयोग (अनलाइन applyvr.election.gov.np) र जुनसुकै निर्वाचन कार्यालय',officeEn:'Election Commission (online at applyvr.election.gov.np) and any election office',
+  whoNe:'१८ वर्ष पूरा भएका, वा निर्वाचनअघि १८ पुग्ने नेपाली नागरिक',whoEn:'Nepali citizens aged 18, or turning 18 before the election',domain:'election.gov.np',
+  steps:[['applyvr.election.gov.np मा जानुहोस् र मोबाइल नम्बरमा आएको OTP ले पुष्टि गर्नुहोस्।','Go to applyvr.election.gov.np and confirm your mobile number with the OTP sent to it.'],
+   ['"नयाँ दर्ता" छानेर नागरिकतामा भए जस्तै विवरण भर्नुहोस्।','Choose New Registration and fill in your details exactly as on your citizenship certificate.'],
+   ['आएको परिचय नम्बर प्रिन्ट गर्नुहोस् वा सुरक्षित राख्नुहोस्।','Print or save the identification number you receive.'],
+   ['त्यो नम्बर र सक्कल नागरिकता लिएर जुनसुकै निर्वाचन कार्यालयमा फोटो र औंठाछाप दिनुहोस्।','Take that number and your original citizenship to any election office for your photo and fingerprints.'],
+   ['राष्ट्रिय परिचयपत्र नम्बर छ भने त्यसैबाट दर्ता गर्न सकिन्छ; त्यसो गर्दा बायोमेट्रिक दिन जानु पर्दैन।','If you have a National ID number you can register with it instead, and skip the biometrics visit.'],
+   ['निर्वाचनअघि election.gov.np मा मतदाता नामावलीमा आफ्नो नाम छ कि जाँच्नुहोस्।','Before the election, check that your name is on the voter list at election.gov.np.']],
+  docs:[['सक्कल नागरिकता प्रमाणपत्र','Original citizenship certificate'],['अनलाइन दर्ताको परिचय नम्बर (प्रिन्ट)','Online registration number (printed)'],['राष्ट्रिय परिचयपत्र नम्बर (भए)','National ID number, if you have one'],['OTP आउने मोबाइल फोन','A mobile phone to receive the OTP']],
+  tipNe:'निर्वाचन नजिक आएपछि दर्ता केही समय रोकिन्छ, त्यसैले चाँडै दर्ता गर्नुहोस्।',tipEn:'Registration pauses for a while before each election, so register early.'}
 ].map(g => ({...g,url:'https://'+g.domain+'/'}));
 
 /* =====================================================================
@@ -1300,6 +1365,220 @@ function AppsPage({t}){
         a.web && store('https://'+a.web+'/','language',a.web))))),
     h('a',{className:'j-link',href:GOV_PLAY_DEV,target:'_blank',rel:'noopener noreferrer',style:{marginTop:16}},h(Icon,{name:'open_in_new',size:18}),t('Google Play मा "Government of Nepal" का सबै एप','All apps by "Government of Nepal" on Google Play')),
     h('p',{className:'field-hint',style:{marginTop:12}},t('बैंक, बीमा र कोषका एप सम्बन्धित संस्थाको आधिकारिक वेबसाइटबाट मात्र खोज्नुहोस्; ','For bank, insurance and fund apps, follow the link on that institution’s official website; '),h('a',{href:'#sector-banking'},t('बैंक, कोष तथा बीमा','see Banks, Funds & Insurance')),'.'));
+}
+
+/* =====================================================================
+   Youth features: share links, report link, scam quiz, rights,
+   mental health. Content is stable law or guidance; nothing here
+   needs regular updating.
+   ===================================================================== */
+const REPO = 'https://github.com/lamsalk12/nagarik-sewa-portal';
+const appBase = () => location.href.split('#')[0].replace(/[^/]*$/, '');
+/* Static, shareable pages built by tools/build-pages.mjs */
+function staticPathFor(route){
+  if (route.view==='guide') return 'guide/'+route.id+'/';
+  if (route.view==='journey') return 'life-event/'+route.id+'/';
+  if (route.view==='district') return 'district/'+route.id+'/';
+  if (['rights','mental-health','safety'].includes(route.view)) return route.view+'/';
+  return '';
+}
+function ShareButton({t,path,title}){
+  const go = async () => {
+    const url = appBase()+path;
+    try { if (navigator.share){ await navigator.share({title:document.title, url}); return; } } catch(e){ if (e && e.name==='AbortError') return; }
+    try { await navigator.clipboard.writeText(url); showToast(t('लिंक कपी भयो','Link copied')); } catch(e){ showToast(url); }
+  };
+  return h(Button,{variant:'outline',size:'sm',icon:'share',onClick:go},t('सेयर गर्नुहोस्','Share'));
+}
+function ReportBar({t,route}){
+  const build = () => `${REPO}/issues/new?template=wrong-info.yml&labels=wrong-info&title=${encodeURIComponent((t('गलत जानकारी: ','Wrong information: ')+document.title).slice(0,120))}&page=${encodeURIComponent(location.href)}`;
+  const href = REPO+'/issues/new?template=wrong-info.yml';
+  const sp = staticPathFor(route);
+  return h('div',{className:'report-bar'},h('div',{className:'wrap report-inner'},
+    h('p',null,h(Icon,{name:'flag',size:20}),t('यस पृष्ठमा गलत वा पुरानो जानकारी देख्नुभयो?','Spotted wrong or outdated information on this page?')),
+    h('div',{className:'report-actions'},
+      sp && h(ShareButton,{t,path:sp,title:document.title}),
+      h('a',{className:'btn btn-outline btn-sm',href,target:'_blank',rel:'noopener noreferrer',onClick:e=>{ e.currentTarget.href = build(); }},h(Icon,{name:'edit_note',size:18}),h('span',null,t('गलत जानकारी रिपोर्ट गर्नुहोस्','Report wrong information'))))),
+    h('p',{className:'wrap report-note'},t('रिपोर्ट GitHub मा सार्वजनिक रूपमा देखिन्छ; त्यसमा व्यक्तिगत विवरण नलेख्नुहोस्।','Reports are public on GitHub; do not include personal details.')));
+}
+
+/* ---------- Online scam and safety quiz ---------- */
+const QUIZ = [
+ {qNe:'"तपाईंको सिम बन्द हुँदैछ, KYC अपडेट गर्न यो लिंक थिच्नुहोस्" भन्ने SMS आयो। के गर्ने?',qEn:'An SMS says "Your SIM will be blocked, tap this link to update KYC". What do you do?',
+  opts:[['लिंक थिचेर विवरण भर्ने','Tap the link and fill in the details'],['लिंक नथिच्ने; आवश्यक भए आफैं टेलिकम कार्यालय वा आधिकारिक एपमा जाँच्ने','Ignore the link; if worried, check with the telecom office or its official app yourself'],['साथीहरूलाई पनि फर्वार्ड गर्ने','Forward it to friends']],a:1,
+  whyNe:'टेलिकम र बैंकले SMS लिंकबाट KYC वा पासवर्ड माग्दैनन्। यस्ता लिंकले खाता ह्याक गर्छन्।',whyEn:'Telecoms and banks do not ask for KYC or passwords through SMS links. These links are used to take over accounts.'},
+ {qNe:'आफूलाई बैंकको कर्मचारी बताउने व्यक्तिले "कार्ड बन्द हुनबाट जोगाउन" OTP माग्यो।',qEn:'A caller says they are from your bank and asks for the OTP "to stop your card being blocked".',
+  opts:[['OTP भनिदिने, बैंकले नै सोधेको हो','Read out the OTP, it is the bank asking'],['फोन राख्ने, बैंकको आधिकारिक नम्बरमा आफैं फोन गर्ने','Hang up and call the bank’s official number yourself'],['आधा OTP मात्र भन्ने','Give only half the OTP']],a:1,
+  whyNe:'OTP कसैलाई पनि भन्नु हुँदैन, बैंकलाई पनि। OTP दिनु भनेको आफ्नो खाताको साँचो दिनु हो।',whyEn:'Never share an OTP with anyone, including the bank. Giving an OTP is handing over the key to your account.'},
+ {qNe:'विदेशमा राम्रो तलबको जागिर, एक हप्तामा भिसा, तर पैसा व्यक्तिगत खातामा पठाउनुपर्ने र श्रम स्वीकृति नचाहिने भनियो।',qEn:'A job abroad with high pay and a visa in a week, but you must pay into a personal account and "no labour permit is needed".',
+  opts:[['छिटो पैसा पठाउने','Pay quickly before the chance goes'],['म्यानपावर इजाजतपत्र प्राप्त हो कि वैदेशिक रोजगार विभागमा जाँच्ने र श्रम स्वीकृतिबिना नजाने','Check the agency is licensed with the Department of Foreign Employment, and never go without a labour permit'],['आधा पैसा अहिले, आधा पछि दिने','Pay half now, half later']],a:1,
+  whyNe:'श्रम स्वीकृतिबिना जानु जोखिमपूर्ण छ र व्यक्तिगत खातामा पैसा माग्नु ठगीको सामान्य संकेत हो।',whyEn:'Going without a labour permit is risky, and asking for money into a personal account is a common sign of fraud.'},
+ {qNe:'एउटा ऋण एपले तुरुन्तै ऋण दिन्छु भन्छ तर तपाईंका सम्पर्क नम्बर र फोटो हेर्ने अनुमति माग्छ।',qEn:'A loan app promises instant money but asks for access to your contacts and photos.',
+  opts:[['अनुमति दिएर ऋण लिने','Allow it and take the loan'],['प्रयोग नगर्ने; नेपाल राष्ट्र बैंकबाट इजाजत पाएका संस्थाबाट मात्र ऋण लिने','Do not use it; borrow only from institutions licensed by Nepal Rastra Bank'],['ऋण लिएर एप मेटाउने','Take the loan, then delete the app']],a:1,
+  whyNe:'अवैध ऋण एपले सम्पर्क नम्बर प्रयोग गरेर परिवार र साथीलाई धम्क्याउने गर्छन्।',whyEn:'Illegal loan apps use your contacts to threaten and shame your family and friends.'},
+ {qNe:'अनलाइनमा कसैले "पैसा नदिए तिम्रा निजी फोटो सार्वजनिक गर्छु" भनेर धम्की दियो।',qEn:'Someone online threatens to share your private photos unless you pay.',
+  opts:[['चुपचाप पैसा तिर्ने','Pay quietly so it goes away'],['पैसा नतिर्ने, प्रमाण सुरक्षित राख्ने, विश्वासिलो व्यक्तिलाई भन्ने र प्रहरीमा उजुरी गर्ने','Do not pay; keep the evidence, tell someone you trust and report it to the police'],['सबै खाता मेटाउने र कसैलाई नभन्ने','Delete all accounts and tell no one']],a:1,
+  whyNe:'तिरेपछि धम्की प्रायः बढ्छ। यो अपराध हो; दोष तपाईंको होइन। नेपाल प्रहरी साइबर ब्यूरो वा १०० मा सम्पर्क गर्नुहोस्।',whyEn:'Paying usually leads to more demands. This is a crime and it is not your fault. Contact the Nepal Police Cyber Bureau or call 100.'},
+ {qNe:'"तपाईंले ठूलो पुरस्कार जित्नुभयो, लिनका लागि प्रोसेसिङ शुल्क तिर्नुहोस्" भन्ने सन्देश आयो।',qEn:'A message says you have won a big prize and must pay a processing fee to claim it.',
+  opts:[['शुल्क तिर्ने','Pay the fee'],['बेवास्ता गर्ने; जुन चिठ्ठामा भाग नै लिनुभएन त्यो जित्न सकिँदैन','Ignore it; you cannot win a draw you never entered'],['बैंक विवरण पठाउने','Send your bank details so they can transfer it']],a:1,
+  whyNe:'साँचो पुरस्कार पाउन पहिले पैसा तिर्नु पर्दैन।',whyEn:'Real prizes never require you to pay first.'},
+ {qNe:'छात्रवृत्तिको वेबसाइटले आवेदन शुल्क कसैको व्यक्तिगत वालेट नम्बरमा तिर्न भन्छ।',qEn:'A scholarship website asks you to pay the application fee to someone’s personal wallet number.',
+  opts:[['तुरुन्तै तिर्ने','Pay at once'],['विश्वविद्यालय वा मन्त्रालयको आधिकारिक .gov.np / .edu.np साइटमा सूचना छ कि जाँच्ने','Check whether the notice is on the official .gov.np or .edu.np site of the university or ministry'],['साथीहरूलाई पनि आवेदन दिन भन्ने','Tell your friends to apply too']],a:1,
+  whyNe:'आधिकारिक संस्थाले व्यक्तिगत वालेटमा शुल्क माग्दैनन्। यस पोर्टलको नक्कली साइट जाँचमा लिंक जाँच्न सक्नुहुन्छ।',whyEn:'Official institutions do not collect fees through personal wallets. You can test the link with this portal’s fake-site checker.'},
+ {qNe:'अनलाइनमा सामान बेच्दा किन्नेले "पैसा पाउन यो QR स्क्यान गर्नुहोस्" भन्यो।',qEn:'You are selling something online and the buyer says "scan this QR code to receive the money".',
+  opts:[['QR स्क्यान गरी PIN हाल्ने','Scan it and enter your PIN'],['स्क्यान नगर्ने; पैसा पाउन QR स्क्यान वा PIN हाल्नु पर्दैन','Do not scan it; you never need to scan a QR or enter a PIN to receive money'],['एकपटक मात्र प्रयास गर्ने','Try it just once']],a:1,
+  whyNe:'QR स्क्यान गरेर PIN हाल्दा पैसा पाउने होइन, तिर्ने हुन्छ।',whyEn:'Scanning a QR and entering your PIN sends money; it does not receive it.'},
+ {qNe:'साथीको फेसबुक खाताबाट "अत्यावश्यक, अहिले नै पैसा पठाइदेऊ" भन्ने सन्देश आयो।',qEn:'Your friend’s Facebook account messages you: "Urgent, send me money right now".',
+  opts:[['तुरुन्तै पठाउने','Send it straight away'],['साथीलाई फोन गरेर आफैं पक्का गर्ने','Call your friend to check first'],['उही सन्देशमा फोन नम्बर माग्ने','Ask for their number in the same chat']],a:1,
+  whyNe:'ह्याक भएका खाताबाट यस्ता सन्देश धेरै आउँछन्। अर्कै माध्यमबाट पक्का गर्नुहोस्।',whyEn:'Hacked accounts often send these messages. Confirm through a different channel.'},
+ {qNe:'राहदानीका लागि "nepalpassport-gov.com" भन्ने साइट भेटियो।',qEn:'You find a passport site at "nepalpassport-gov.com".',
+  opts:[['आधिकारिक हो, आवेदन दिने','It is official, apply there'],['नक्कली हुन सक्छ; आधिकारिक साइट nepalpassport.gov.np हो','It may be fake; the official site is nepalpassport.gov.np'],['दुवैमा आवेदन दिने','Apply on both to be safe']],a:1,
+  whyNe:'सरकारी साइटको अन्त्य .gov.np हुन्छ। बीचमा gov लेखिनु पर्याप्त होइन।',whyEn:'Government sites end in .gov.np. Having "gov" somewhere in the name is not enough.'}
+];
+function SafetyPage({t}){
+  const [ans,setAns] = useState({});
+  const done = Object.keys(ans).length;
+  const score = QUIZ.reduce((n,q,i) => n + (ans[i]===q.a ? 1 : 0), 0);
+  return h('div',{className:'wrap',style:{paddingBottom:40}},
+    h(Crumbs,{t,items:[[t('युवाका लागि','For young people'),'#youth'],[t('अनलाइन ठगीबाट बच्नुहोस्','Stay safe from online scams')]]}),
+    h('div',{className:'page-title'},h('span',{className:'qicon sos'},h(Icon,{name:'shield',size:30})),
+      h('div',null,h('h1',null,t('अनलाइन ठगीबाट बच्नुहोस्','Stay safe from online scams')),
+        h('p',null,t('१० वटा सामान्य अवस्था। तपाईं के गर्नुहुन्छ?','Ten common situations. What would you do?')))),
+    h('ol',{className:'quiz'},QUIZ.map((q,i) => {
+      const picked = ans[i];
+      return h('li',{key:i,className:'quiz-q'},
+        h('p',{className:'quiz-text'},h('span',{className:'quiz-no num'},t(toNe(i+1),i+1)),t(q.qNe,q.qEn)),
+        h('div',{className:'quiz-opts',role:'group','aria-label':t(`प्रश्न ${toNe(i+1)} का विकल्प`,`Choices for question ${i+1}`)},q.opts.map((o,j) => {
+          const state = picked===undefined ? '' : j===q.a ? ' right' : j===picked ? ' wrong' : ' dim';
+          return h('button',{key:j,type:'button',className:'quiz-opt'+state,disabled:picked!==undefined,'aria-pressed':picked===j,onClick:()=>setAns(p=>({...p,[i]:j}))},
+            picked!==undefined && j===q.a && h(Icon,{name:'check_circle',size:20,fill:1}),
+            picked!==undefined && j===picked && j!==q.a && h(Icon,{name:'cancel',size:20,fill:1}),
+            h('span',null,t(o[0],o[1])));
+        })),
+        picked!==undefined && h('p',{className:'quiz-why '+(picked===q.a?'ok':'no'),role:'status'},h('b',null,picked===q.a?t('सही! ','Right. '):t('ध्यान दिनुहोस्: ','Careful: ')),t(q.whyNe,q.whyEn)));
+    })),
+    h('div',{className:'quiz-score',role:'status'},
+      done<QUIZ.length ? t(`${toNe(done)}/${toNe(QUIZ.length)} उत्तर दिनुभयो`,`${done} of ${QUIZ.length} answered`)
+        : h(React.Fragment,null,h('b',null,t(`तपाईंको अंक: ${toNe(score)}/${toNe(QUIZ.length)}`,`Your score: ${score}/${QUIZ.length}`)),' ',
+            score===QUIZ.length ? t('उत्कृष्ट! साथीहरूलाई पनि सेयर गर्नुहोस्।','Excellent. Share it with your friends.') : t('माथिका व्याख्या पढ्नुहोस् र फेरि प्रयास गर्नुहोस्।','Read the explanations above and try again.'),
+            h(Button,{variant:'ghost',size:'sm',icon:'restart_alt',onClick:()=>setAns({})},t('फेरि गर्नुहोस्','Try again')))),
+    h('div',{className:'tool-hub',style:{marginTop:20}},
+      h('a',{className:'panel tool-link',href:'#check-site'},h('span',{className:'qicon'},h(Icon,{name:'gpp_good',size:26})),h('span',{className:'qtxt'},h('b',null,t('लिंक जाँच्नुहोस्','Check a link')),h('span',null,t('साइट सरकारी हो कि होइन','Is the site official?'))),h(Icon,{name:'chevron_right',className:'go'})),
+      h('a',{className:'panel tool-link',href:'#complain'},h('span',{className:'qicon'},h(Icon,{name:'campaign',size:26})),h('span',{className:'qtxt'},h('b',null,t('ठगीको उजुरी','Report a scam')),h('span',null,t('प्रहरी साइबर ब्यूरो र अन्य निकाय','Police Cyber Bureau and others'))),h(Icon,{name:'chevron_right',className:'go'})),
+      h('a',{className:'panel tool-link',href:'#apps'},h('span',{className:'qicon'},h(Icon,{name:'install_mobile',size:26})),h('span',{className:'qtxt'},h('b',null,t('सही एप मात्र','Use genuine apps')),h('span',null,t('सरकारी एपको आधिकारिक लिंक','Official links for government apps'))),h(Icon,{name:'chevron_right',className:'go'}))));
+}
+
+/* ---------- Know your rights ---------- */
+const RIGHTS = [
+ {id:'arrest',icon:'gavel',ne:'पक्राउ परेमा',en:'If you are arrested',srcNe:'नेपालको संविधान, धारा २०',srcEn:'Constitution of Nepal, Article 20',items:[
+   ['पक्राउको कारण थाहा पाउने अधिकार छ।','You must be told why you are arrested.'],
+   ['पक्राउ परेदेखि नै आफूले रोजेको कानून व्यवसायीसँग सल्लाह लिन पाइन्छ।','You can consult a lawyer of your choice from the moment of arrest.'],
+   ['यात्राको समय बाहेक २४ घण्टाभित्र मुद्दा हेर्ने अधिकारी समक्ष उपस्थित गराउनुपर्छ।','You must be brought before a judicial authority within 24 hours, not counting travel time.'],
+   ['दोषी प्रमाणित नभएसम्म निर्दोष मानिन्छ।','You are presumed innocent until proven guilty.'],
+   ['आफ्नै विरुद्ध बयान दिन बाध्य पारिँदैन।','You cannot be forced to testify against yourself.'],
+   ['आर्थिक अवस्था कमजोर भए कानूनबमोजिम निःशुल्क कानूनी सहायता पाइन्छ।','If you cannot afford it, you have the right to free legal aid under the law.']],
+   linkNe:'मानव अधिकार उल्लङ्घन भए',linkEn:'If your rights are violated',href:'#complain'},
+ {id:'work',icon:'work',ne:'काम गर्दा',en:'At work',srcNe:'श्रम ऐन, २०७४',srcEn:'Labour Act 2074 (2017)',items:[
+   ['काम सुरु गर्दा लिखित नियुक्ति पत्र वा रोजगार सम्झौता पाउनुपर्छ।','You must get a written appointment letter or employment contract.'],
+   ['सामान्यतया दिनमा ८ घण्टा र हप्तामा ४८ घण्टा काम हुन्छ; लगातार ५ घण्टापछि आधा घण्टा विश्राम पाइन्छ।','Normal hours are 8 a day and 48 a week, with a half-hour break after 5 hours in a row.'],
+   ['ओभरटाइम सीमित छ र त्यसको थप पारिश्रमिक पाइन्छ।','Overtime is limited by law and must be paid extra.'],
+   ['हप्तामा एक दिन बिदा र तलबी बिरामी बिदा पाइन्छ।','You get one day off a week and paid sick leave.'],
+   ['रोजगारदाताले तपाईंलाई सामाजिक सुरक्षा कोषमा दर्ता गरी योगदान गर्नुपर्छ।','Your employer must enrol you in the Social Security Fund and contribute for you.'],
+   ['जबरजस्ती काम गराउनु र भेदभाव गर्नु कानूनअनुसार दण्डनीय छ।','Forced labour and discrimination at work are punishable by law.']],
+   linkNe:'कामसम्बन्धी उजुरी',linkEn:'Workplace complaints',href:'#complain'},
+ {id:'consumer',icon:'shopping_bag',ne:'उपभोक्ताको रूपमा',en:'As a consumer',srcNe:'नेपालको संविधान, धारा ४४ र उपभोक्ता संरक्षण ऐन',srcEn:'Constitution of Nepal, Article 44, and the Consumer Protection Act',items:[
+   ['गुणस्तरीय सामान र सेवा पाउने अधिकार छ।','You have the right to quality goods and services.'],
+   ['किनेको सामानको बिल माग्नुहोस् र सुरक्षित राख्नुहोस्; उजुरी गर्दा चाहिन्छ।','Ask for a bill and keep it; you need it to complain.'],
+   ['बढी मूल्य, मिसावट वा नक्कली सामानको उजुरी गर्न सकिन्छ।','You can complain about overcharging, adulteration or fake goods.'],
+   ['गुणस्तरहीन सामान वा सेवाबाट हानि भए क्षतिपूर्ति माग्न सकिन्छ।','If poor goods or services harm you, you can claim compensation.']],
+   linkNe:'उपभोक्ता उजुरी कहाँ गर्ने',linkEn:'Where to make a consumer complaint',href:'#complain'},
+ {id:'online',icon:'devices',ne:'अनलाइनमा',en:'Online',srcNe:'विद्युतीय कारोबार ऐन र मुलुकी अपराध संहिता',srcEn:'Electronic Transactions Act and the Penal Code',items:[
+   ['अनलाइन धम्की, ह्याकिङ र अनुमतिबिना निजी फोटो फैलाउनु अपराध हो।','Online threats, hacking and sharing private images without consent are crimes.'],
+   ['स्क्रिनसट, लिंक र मिति सुरक्षित राख्नुहोस्; मेटाउनु अघि प्रमाण राख्नुहोस्।','Keep screenshots, links and dates as evidence before anything is deleted.'],
+   ['नेपाल प्रहरी साइबर ब्यूरो वा नजिकको प्रहरीमा उजुरी गर्न सकिन्छ।','You can report to the Nepal Police Cyber Bureau or any police office.'],
+   ['सामाजिक सञ्जालको रिपोर्ट सुविधा प्रयोग गरी सामग्री हटाउन अनुरोध गर्नुहोस्।','Use the platform’s report tools to ask for the content to be removed.']],
+   linkNe:'अनलाइन ठगीबाट बच्ने क्विज',linkEn:'Take the scam safety quiz',href:'#safety'},
+ {id:'equality',icon:'diversity_3',ne:'भेदभावविरुद्ध',en:'Against discrimination',srcNe:'नेपालको संविधान, धारा १८ र २४',srcEn:'Constitution of Nepal, Articles 18 and 24',items:[
+   ['कानूनको दृष्टिमा सबै समान छन्।','Everyone is equal before the law.'],
+   ['जात, लिङ्ग, धर्म, क्षेत्र वा अपाङ्गताका आधारमा भेदभाव गर्न पाइँदैन।','No one may be discriminated against because of caste, gender, religion, region or disability.'],
+   ['छुवाछूत र जातीय भेदभाव गम्भीर अपराध हो।','Untouchability and caste discrimination are serious crimes.']],
+   linkNe:'भेदभावको उजुरी',linkEn:'Report discrimination',href:'#complain'}
+];
+function RightsPage({t}){
+  return h('div',{className:'wrap',style:{paddingBottom:40}},
+    h(Crumbs,{t,items:[[t('युवाका लागि','For young people'),'#youth'],[t('आफ्ना अधिकार जान्नुहोस्','Know your rights')]]}),
+    h('div',{className:'page-title'},h('span',{className:'qicon'},h(Icon,{name:'balance',size:30})),
+      h('div',null,h('h1',null,t('आफ्ना अधिकार जान्नुहोस्','Know your rights')),
+        h('p',null,t('संविधान र कानूनले दिएका मुख्य अधिकार, सरल भाषामा।','Key rights from the Constitution and laws, in plain words.')))),
+    h('div',{className:'rights-grid'},RIGHTS.map(r => h('section',{key:r.id,className:'panel rights-card',id:'r-'+r.id},
+      h('h2',{className:'group-h'},h(Icon,{name:r.icon,size:24}),t(r.ne,r.en)),
+      h('ul',{className:'rights-list'},r.items.map((x,i) => h('li',{key:i},h(Icon,{name:'check',size:18}),h('span',null,t(x[0],x[1]))))),
+      h('p',{className:'rights-src'},t('आधार: ','Basis: '),t(r.srcNe,r.srcEn)),
+      h('a',{className:'j-link',href:r.href},h(Icon,{name:'arrow_forward',size:18}),t(r.linkNe,r.linkEn))))),
+    h(Notice,{tone:'info',title:t('यो कानूनी सल्लाह होइन','This is not legal advice')},t('यहाँ मुख्य कुरा मात्र छन्। आफ्नो अवस्थाका लागि कानून व्यवसायी, जिल्ला अदालतको निःशुल्क कानूनी सहायता वा सम्बन्धित निकायसँग सल्लाह लिनुहोस्।','This is a summary of the main points. For your own situation, talk to a lawyer, the free legal aid service at your district court, or the body concerned.')));
+}
+
+/* ---------- Mental health support ---------- */
+const MH_HELP = [
+          ['फुर्सद निकालेर सुन्नुहोस्; सल्लाह दिन हतार नगर्नुहोस्।','Make time and listen; do not rush to give advice.'],
+          ['"तिमीलाई आफूलाई हानि गर्ने सोच आएको छ?" भनेर सिधै सोध्न डराउनु पर्दैन; सोध्दा खतरा बढ्दैन।','It is okay to ask directly if they are thinking of harming themselves; asking does not make it more likely.'],
+          ['उनीहरूको भावनालाई सानो नठान्नुहोस्।','Take their feelings seriously.'],
+          ['हेल्पलाइन, परिवार वा स्वास्थ्यकर्मीसम्म पुग्न मद्दत गर्नुहोस्।','Help them reach a helpline, family or a health worker.'],
+          ['खतरा छ भने एक्लै नछोड्नुहोस्।','Do not leave them alone if they are in danger.']];
+const MH_SELF = [
+          ['विश्वास लाग्ने कसैलाई आफ्नो कुरा भन्नुहोस्।','Tell someone you trust how you are feeling.'],
+          ['निद्रा, खाना र दिनचर्या नियमित राख्ने प्रयास गर्नुहोस्।','Try to keep regular sleep, meals and routine.'],
+          ['हिँडडुल वा हल्का व्यायामले मन हल्का बनाउन सक्छ।','A walk or light exercise can help.'],
+          ['रक्सी र लागु पदार्थले समस्या झन् बढाउन सक्छ।','Alcohol and drugs can make things worse.'],
+          ['दुई हप्ताभन्दा बढी मन नलागेमा स्वास्थ्यकर्मीसँग कुरा गर्नुहोस्; उपचार पाइन्छ।','If low feelings last more than two weeks, talk to a health worker; treatment helps.']];
+const MH_LINES = [
+    ['1166','राष्ट्रिय आत्महत्या रोकथाम हेल्पलाइन','National Suicide Prevention Helpline','नेपाल सरकारले मानसिक अस्पताल, लगनखेलबाट सञ्चालन गरेको। सुनिदिने र सहायता कहाँ पाइन्छ भन्ने बताउने।','Run by the government from the Mental Hospital, Lagankhel. Free counselling and referral.'],
+    ['1660 010 2005','टीपीओ नेपाल मनोसामाजिक परामर्श','TPO Nepal psychosocial counselling','नेपाल टेलिकमबाट निःशुल्क। सामान्यतया दिनको ९ देखि ५ बजेसम्म।','Free from Nepal Telecom. Usually 9am to 5pm daily.']];
+function MentalHealthPage({t}){
+  const lines = MH_LINES;
+  return h('div',{className:'wrap',style:{paddingBottom:40}},
+    h(Crumbs,{t,items:[[t('युवाका लागि','For young people'),'#youth'],[t('मानसिक स्वास्थ्य सहायता','Mental health support')]]}),
+    h('div',{className:'page-title'},h('span',{className:'qicon calm'},h(Icon,{name:'favorite',size:30})),
+      h('div',null,h('h1',null,t('मन गाह्रो भएको छ? तपाईं एक्लो हुनुहुन्न।','Finding things hard? You are not alone.')),
+        h('p',null,t('कुरा गर्नु कमजोरी होइन। सुन्ने मान्छे छन्, र मद्दत पाइन्छ।','Talking is not a weakness. There are people who will listen, and help is available.')))),
+    h('div',{className:'notice notice-danger',role:'note'},h(Icon,{name:'emergency',size:22,fill:1}),
+      h('div',null,h('strong',null,t('अहिले नै खतरा छ भने','If someone is in danger right now')),
+        t('तुरुन्तै प्रहरी ','Call police '),h('a',{href:'tel:100',className:'num'},t('१००','100')),t(' वा एम्बुलेन्स ',' or ambulance '),h('a',{href:'tel:102',className:'num'},t('१०२','102')),t(' मा फोन गर्नुहोस्, र उहाँसँगै बस्नुहोस्।',' straight away, and stay with them.'))),
+    h('h2',{className:'group-h',style:{marginTop:24}},t('कुरा गर्न फोन गर्नुहोस्','Call someone to talk to')),
+    h('ul',{className:'help-list'},lines.map(([num,ne,en,dne,den]) => h('li',{key:num},
+      h('span',{className:'qicon calm'},h(Icon,{name:'call',size:24})),
+      h('span',{className:'help-txt'},h('b',null,t(ne,en)),h('span',null,t(dne,den))),
+      h('a',{className:'help-num num',href:'tel:'+num.replace(/\s/g,'')},t(toNe(num),num)),
+      h('button',{type:'button',className:'mini-btn','aria-label':t('नम्बर कपी गर्नुहोस्','Copy number'),onClick:()=>copyText(num.replace(/\s/g,''),t)},h(Icon,{name:'content_copy',size:18}))))),
+    h('p',{className:'field-hint',style:{marginTop:8}},t('हेल्पलाइनको समय फरक पर्न सक्छ। फोन नउठे फेरि प्रयास गर्नुहोस् वा नजिकको स्वास्थ्य संस्थामा जानुहोस्।','Helpline hours can vary. If no one answers, try again or go to your nearest health facility.')),
+    h('div',{className:'rights-grid',style:{marginTop:22}},
+      h('section',{className:'panel'},h('h2',{className:'group-h'},h(Icon,{name:'volunteer_activism',size:22}),t('साथीलाई कसरी साथ दिने','How to support a friend')),
+        h('ul',{className:'rights-list'},MH_HELP.map((x,i) => h('li',{key:i},h(Icon,{name:'check',size:18}),h('span',null,t(x[0],x[1])))))),
+      h('section',{className:'panel'},h('h2',{className:'group-h'},h(Icon,{name:'spa',size:22}),t('आफ्नो हेरचाह','Looking after yourself')),
+        h('ul',{className:'rights-list'},MH_SELF.map((x,i) => h('li',{key:i},h(Icon,{name:'check',size:18}),h('span',null,t(x[0],x[1]))))))),
+    h(Notice,{tone:'info',title:t('उपचार कहाँ पाइन्छ','Where to get care')},t('नजिकको स्वास्थ्य चौकी, जिल्ला अस्पताल र मानसिक अस्पताल, लगनखेलमा मानसिक स्वास्थ्य सेवा पाइन्छ।','Mental health care is available at your local health post, district hospital and the Mental Hospital in Lagankhel.')));
+}
+
+/* ---------- For young people hub ---------- */
+const YOUTH = [
+  ['#guide-voter','how_to_vote','पहिलो पटक मतदाता बन्ने','Register to vote for the first time'],
+  ['#safety','shield','अनलाइन ठगीबाट बच्ने क्विज','Online scam safety quiz'],
+  ['#rights','balance','आफ्ना अधिकार जान्नुहोस्','Know your rights'],
+  ['#mental-health','favorite','मानसिक स्वास्थ्य सहायता','Mental health support'],
+  ['#journey-business','storefront','सानो व्यवसाय सुरु गर्दा','Starting a small business'],
+  ['#journey-study-abroad','school','विदेश पढ्न जाँदा','Going abroad to study'],
+  ['#journey-after-school','auto_stories','एसईई वा कक्षा १२ पछि','After SEE or Class 12'],
+  ['#journey-sixteen','cake','१६ वर्ष पुग्दा','Turning 16']];
+function YouthCards({t}){
+  return h('div',{className:'youth-grid'},YOUTH.map(([href,ic,ne,en]) => h('a',{key:href,href,className:'youth-card'},
+    h('span',{className:'y-icon'},h(Icon,{name:ic,size:26})),h('span',null,t(ne,en)))));
+}
+function YouthPage({t}){
+  return h('div',{className:'wrap',style:{paddingBottom:40}},
+    h(Crumbs,{t,items:[[t('युवाका लागि','For young people')]]}),
+    h('div',{className:'page-title'},h('span',{className:'qicon'},h(Icon,{name:'rocket_launch',size:30})),
+      h('div',null,h('h1',null,t('युवाका लागि','For young people')),h('p',null,t('मतदान, अधिकार, सुरक्षा, पढाइ र आफ्नै काम सुरु गर्ने बारे।','Voting, rights, staying safe, study and starting your own work.')))),
+    h(YouthCards,{t}));
 }
 
 function GuidesPage({t}){
@@ -1626,18 +1905,21 @@ const JOURNEYS = [
   {guide:'citizenship',ne:'स्थायी ठेगानाको जिल्ला प्रशासन कार्यालयबाट नागरिकता लिनुहोस्।',en:'Get your citizenship from the District Administration Office of your permanent address.'},
   {guide:'nid',ne:'नागरिकता पाएपछि राष्ट्रिय परिचयपत्रमा नाम दर्ता गर्नुहोस्।',en:'Once you have citizenship, enrol for the National ID.'},
   {guide:'licence',ne:'मोटरसाइकलको सवारी चालक अनुमतिपत्र १६ वर्षमा लिन सकिन्छ।',en:'You can get a motorcycle licence at 16.'},
-  {domain:'election.gov.np',ne:'१८ वर्ष पुगेपछि मतदाता नामावलीमा नाम दर्ता गर्नुहोस्।',en:'At 18, register on the voter roll.'}]},
+  {guide:'voter',ne:'१८ वर्ष पुगेपछि मतदाता नामावलीमा नाम दर्ता गर्नुहोस्।',en:'At 18, register on the voter roll.'}]},
  {id:'abroad',icon:'flight_takeoff',ne:'वैदेशिक रोजगारीमा जाँदा',en:'Going abroad for work',steps:[
   {guide:'passport',ne:'राहदानी बनाउनुहोस् वा म्याद जाँच्नुहोस्।',en:'Get a passport or check its expiry.'},
   {guide:'labour',ne:'इजाजतपत्र प्राप्त माध्यमबाट रोजगारी पक्का गरी श्रम स्वीकृति लिनुहोस्।',en:'Secure the job through a licensed channel and get your labour permit.'},
   {domain:'feb.gov.np',ne:'वैदेशिक रोजगार बोर्डको कल्याणकारी कोष र बीमाबारे बुझ्नुहोस्।',en:'Learn what the Foreign Employment Board’s welfare fund and insurance cover.'},
   {domain:'mofa.gov.np',ne:'विदेशमा समस्या परे नजिकको नेपाली दूतावाससँग सम्पर्क गर्नुहोस्।',en:'If something goes wrong abroad, contact the nearest Nepali embassy.'}]},
- {id:'business',icon:'storefront',ne:'व्यवसाय सुरु गर्दा',en:'Starting a business',steps:[
-  {ne:'व्यवसायको किसिम छान्नुहोस्: एकल वा साझेदारी फर्म, वा कम्पनी।',en:'Choose the business type: sole or partnership firm, or a company.'},
-  {guide:'company',ne:'कम्पनी भए कम्पनी रजिस्ट्रारको कार्यालयमा अनलाइन दर्ता गर्नुहोस्।',en:'For a company, register online with the Office of the Company Registrar.'},
-  {href:'#local',ne:'फर्म भए आफ्नो प्रदेशको सम्बन्धित कार्यालयमा दर्ता गर्नुहोस्।',en:'For a firm, register with the relevant office in your province.'},
-  {guide:'pan',ne:'आन्तरिक राजस्व कार्यालयमा प्यान (र आवश्यक भए भ्याट) दर्ता गर्नुहोस्।',en:'Register for PAN (and VAT if required) at the Inland Revenue Office.'},
-  {href:'#offices',ne:'व्यवसाय रहेको वडा कार्यालयमा व्यवसाय कर तिरी दर्ता गर्नुहोस्।',en:'Register with the ward office where the business operates and pay local business tax.'}]},
+ {id:'business',icon:'storefront',ne:'सानो व्यवसाय सुरु गर्दा',en:'Starting a small business',steps:[
+  {ne:'व्यवसायको किसिम छान्नुहोस्: एकल स्वामित्वको फर्म, साझेदारी फर्म वा प्राइभेट कम्पनी।',en:'Choose the form: a sole proprietorship, a partnership or a private company.'},
+  {href:'#offices',labelNe:'आफ्नो जिल्ला र पालिका खोज्नुहोस्',labelEn:'Find your district and local level',ne:'फर्म कहाँ दर्ता गर्ने भन्ने व्यवसायको किसिमअनुसार फरक हुन्छ (वडा/पालिका, वाणिज्य कार्यालय वा घरेलु तथा साना उद्योग कार्यालय)। आफ्नो पालिकामा सोधेर पक्का गर्नुहोस्।',en:'Where a firm registers depends on the business: the ward or municipality, a commerce office or a cottage and small industries office. Ask your local level which applies.'},
+  {guide:'company',ne:'कम्पनी खोल्ने भए कम्पनी रजिस्ट्रारको कार्यालयमा अनलाइन दर्ता गर्नुहोस्।',en:'For a company, register online with the Office of the Company Registrar.'},
+  {guide:'pan',ne:'आन्तरिक राजस्व कार्यालयमा प्यान दर्ता गर्नुहोस्।',en:'Register for PAN with the Inland Revenue Department.'},
+  {href:'#offices',labelNe:'आफ्नो वडा कार्यालय खोज्नुहोस्',labelEn:'Find your ward office',ne:'व्यवसाय रहेको वडा कार्यालयमा व्यवसाय दर्ता गरी स्थानीय कर तिर्नुहोस्।',en:'Register the business with the ward office where it operates and pay the local business tax.'},
+  {ne:'फर्म वा कम्पनीको नाममा बैंक खाता खोल्नुहोस्।',en:'Open a bank account in the business’s name.'},
+  {href:'#rights',labelNe:'कामदारका अधिकार हेर्नुहोस्',labelEn:'See workers’ rights',ne:'कामदार राखे लिखित सम्झौता गर्नुहोस् र सामाजिक सुरक्षा कोषमा दर्ता गर्नुहोस्।',en:'If you hire staff, give written contracts and enrol them in the Social Security Fund.'},
+  {domain:'ird.gov.np',ne:'बिल र हिसाब राख्नुहोस्, समयमा कर विवरण बुझाउनुहोस्; कारोबार कानूनले तोकेको सीमा नाघे भ्याट दर्ता गर्नुहोस्।',en:'Keep bills and accounts and file tax returns on time; register for VAT if your turnover passes the legal threshold.'}]},
  {id:'moving',icon:'local_shipping',ne:'बसाइँ सर्दा',en:'Moving to a new place',steps:[
   {href:'#offices',ne:'पुरानो वडा कार्यालयमा बसाइँसराइ (जाने) दर्ता गर्नुहोस्।',en:'Register the move-out at your old ward office.'},
   {href:'#offices',ne:'नयाँ ठाउँको वडा कार्यालयमा ३५ दिनभित्र बसाइँसराइ (आउने) दर्ता गर्नुहोस्।',en:'Register the move-in at your new ward office within 35 days.'},
@@ -1665,6 +1947,7 @@ function JourneyPage({t,id}){
     h('ol',{className:'journey-steps'},j.steps.map((s,i) => {
       const g = s.guide && GUIDES.find(x=>x.id===s.guide);
       const link = g ? h('a',{className:'j-link',href:'#guide-'+g.id},h(Icon,{name:'menu_book',size:18}),t(`गाइड: ${g.ne}`,`Guide: ${g.en}`))
+        : (s.href && s.labelNe) ? h('a',{className:'j-link',href:s.href},h(Icon,{name:'arrow_forward',size:18}),t(s.labelNe,s.labelEn))
         : s.href ? h('a',{className:'j-link',href:s.href},h(Icon,{name:s.href==='#offices'?'apartment':s.href.startsWith('#sector-')?'account_balance':'location_city',size:18}),s.href==='#offices'?t('आफ्नो जिल्ला र वडा खोज्नुहोस्','Find your district and ward'):s.href==='#sector-universities'?t('विश्वविद्यालयहरू हेर्नुहोस्','See universities'):t('प्रदेश र पालिका हेर्नुहोस्','See provinces and local levels'))
         : s.domain ? h('a',{className:'j-link',href:'https://'+s.domain+'/',target:'_blank',rel:'noopener noreferrer',onClick:()=>Saved.visit({ne:s.domain,en:s.domain,domain:s.domain,url:'https://'+s.domain+'/'})},h(Icon,{name:'open_in_new',size:18}),s.domain) : null;
       return h('li',{key:i},h('span',{className:'step-no num'},t(toNe(i+1),i+1)),
@@ -2469,7 +2752,7 @@ function MapTeaser({t}){
 }
 
 /* ---------- Home ---------- */
-const GUIDE_TAGS = {citizenship:'nagarikta nagrikta nagarikata',passport:'rahadani rahdani passport',licence:'license lisens driving sawari chalak',nid:'national id parichaya patra',birth:'janma darta janmadarta',marriage:'bibaha biwaha bivah darta',pan:'pan tax kar',company:'company kampani darta',land:'jagga malpot lalpurja nakasa',labour:'shram swikriti labor permit abroad bidesh',noc:'noc no objection bidesh padhai abroad study visa',equivalence:'samakakshata samakakshyata equivalence degree ugc',results:'see result natija parinam plus two +2 class 12 neb grade sheet',mecee:'mecee mbbs entrance pravesh nursing bds doctor',teacher:'teacher license shikshak lisens tsc adhyapan'};
+const GUIDE_TAGS = {citizenship:'nagarikta nagrikta nagarikata',passport:'rahadani rahdani passport',licence:'license lisens driving sawari chalak',nid:'national id parichaya patra',birth:'janma darta janmadarta',marriage:'bibaha biwaha bivah darta',pan:'pan tax kar',company:'company kampani darta',land:'jagga malpot lalpurja nakasa',labour:'shram swikriti labor permit abroad bidesh',noc:'noc no objection bidesh padhai abroad study visa',equivalence:'samakakshata samakakshyata equivalence degree ugc',results:'see result natija parinam plus two +2 class 12 neb grade sheet',mecee:'mecee mbbs entrance pravesh nursing bds doctor',teacher:'teacher license shikshak lisens tsc adhyapan',voter:'voter matadata nam darta voter id card election nirvachan vote'};
 let SEARCH_INDEX = null;
 function searchIndex(){
   if (SEARCH_INDEX) return SEARCH_INDEX;
@@ -2486,6 +2769,10 @@ function searchIndex(){
     ...[['#holidays','event','बिदा पात्रो','Holiday calendar','bida chhutti holiday calendar patro'],['#calculators','calculate','शुल्क र कर हिसाब','Fee and tax calculators','kar aayakar income tax vehicle sawari jagga registration rajistrasan malpot fee shulka'],
         ['#check-site','gpp_good','नक्कली साइट जाँच','Fake-site checker','nakkali fake website link phishing thagi'],['#complain','campaign','कहाँ उजुरी गर्ने','Where to complain','ujuri gunaso complaint ghus bribe corruption bhrastachar'],
         ['#map','map','नेपालको नक्सा','Map of Nepal','naksa naksha map province district palika'],
+        ['#youth','rocket_launch','युवाका लागि','For young people','yuva youth young student vidyarthi'],
+        ['#safety','shield','अनलाइन ठगीबाट बच्नुहोस्','Stay safe from online scams','scam thagi fraud otp hack quiz safety surakshya loan app'],
+        ['#rights','balance','आफ्ना अधिकार जान्नुहोस्','Know your rights','adhikar rights kanun law arrest pakrau shramik labour consumer upabhokta'],
+        ['#mental-health','favorite','मानसिक स्वास्थ्य सहायता','Mental health support','mental health manasik swasthya depression tension suicide atmahatya 1166 counselling'],
         ['#apps','install_mobile','सरकारी मोबाइल एप','Official mobile apps','app mobile nagarik police mofa mitra shram sansar hami weather play store'],
         ['#sector-banking','account_balance_wallet','बैंक, कोष तथा बीमा','Banks, Funds & Insurance','bank baink beema bima insurance sanchaya kosh epf cit nagarik lagani ssf meroshare connectips rbb adbl'],
         ['#help','emergency','आपतकालीन, विपद् र हेल्पलाइन','Emergency, disaster & helplines','bipad badhi pahiro bhukampa flood earthquake landslide emergency helpline mausam weather']]
@@ -2540,6 +2827,10 @@ function Home({t,lang}){
       h('section',{className:'section',style:{paddingBottom:0}},h('div',{className:'wrap'},
         h('div',{className:'sec-head'},h('div',null,h('p',{className:'eyebrow'},t('जीवनका घटना','Life events')),h('h2',null,t('तपाईंलाई के भइरहेको छ?','What is happening in your life?')))),
         h(JourneyCards,{t}))),
+      h('section',{className:'section',style:{paddingBottom:0}},h('div',{className:'wrap'},
+        h('div',{className:'sec-head'},h('div',null,h('p',{className:'eyebrow'},t('युवाका लागि','For young people')),h('h2',null,t('मतदान, अधिकार, सुरक्षा र आफ्नै काम','Voting, rights, safety and your own business'))),
+          h('a',{href:'#youth',className:'btn btn-ghost btn-sm'},h('span',null,t('सबै हेर्नुहोस्','See all')),h(Icon,{name:'arrow_forward',size:18}))),
+        h(YouthCards,{t}))),
       h(GuideTeaser,{t}),
       h('section',{className:'section',style:{paddingBottom:0}},h('div',{className:'wrap'},
         h('div',{className:'sec-head'},h('div',null,h('p',{className:'eyebrow'},t('उपकरण','Tools')),h('h2',null,t('काम लाग्ने उपकरण','Handy tools')))),
@@ -2706,6 +2997,7 @@ function Footer({t}){
 }
 
 window.__NSP_OFFICIAL = () => Array.from(officialList().values());
+window.__NSP_DATA = () => ({GUIDES, JOURNEYS, DISTRICTS, PROVINCES, KIND, RIGHTS, QUIZ, MH_LINES, MH_HELP, MH_SELF, localName});
 ReactDOM.createRoot(document.getElementById('root')).render(h(App));
 
 /* PWA: register the service worker when hosted (silently skipped where unsupported, e.g. preview frames). */
