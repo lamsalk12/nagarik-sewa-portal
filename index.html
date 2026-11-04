@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-EpuYQES5r0osafn4ovdNCepTmlr4fSt0NmYHi7nJbdI='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-KvO2bfD+iVDyJKYAvV2Ybzn3RHbiFFdevJUz/SjAKcM='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>नागरिक सेवा पोर्टल · Your route to government services</title>
 <meta name="description" content="नेपालका संघीय निकाय, ७ प्रदेश, ७७ जिल्ला र ७५३ स्थानीय तहका आधिकारिक वेबसाइट, सेवा गाइड, बिदा पात्रो, कर हिसाब र नक्सा एकै ठाउँमा। Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.">
@@ -987,14 +987,15 @@ const parseRoute = () => {
   return {view:'home'};
 };
 
-/* Simplified Nepal flag mark (double pennant). Official emblem loads from /assets in production. */
 function FlagMark(){
-  return h('svg',{viewBox:'0 0 100 124','aria-hidden':'true'},
-    h('path',{d:'M2 2 L98 64 L40 64 L98 122 L2 122 Z',fill:'#ffffff'}),
-    h('path',{d:'M8 12 L80 58 L26 58 L84 116 L8 116 Z',fill:'#DC143C'}),
-    h('path',{d:'M16 40 a14 14 0 0 0 28 0 a14 10 0 0 1 -28 0 Z',fill:'#ffffff'}),
-    h('circle',{cx:30,cy:36,r:5,fill:'#ffffff'}),
-    h('circle',{cx:30,cy:92,r:10,fill:'#ffffff'}));
+  /* National flag: crimson field with a dark blue border; white moon with eight rays above a crescent, and a white twelve-ray sun.
+     A thin white edge keeps it visible on the blue header. */
+  return h('svg',{viewBox:'-2 -2 104 126','aria-hidden':'true'},
+    h('path',{d:'M1 1 L97 63 L39 63 L97 121 L1 121 Z',fill:'#003893',stroke:'#ffffff',strokeWidth:2.4,strokeLinejoin:'round',paintOrder:'stroke'}),
+    h('path',{d:'M7 11.5 L82.5 58 L28 58 L86.5 115 L7 115 Z',fill:'#DC143C'}),
+    h('path',{d:'M18.8 34 L15 32.01 L19.27 31.63 L16.52 28.33 L20.62 29.62 L19.33 25.52 L22.63 28.27 L23.01 24 L25 27.8 L26.99 24 L27.37 28.27 L30.67 25.52 L29.38 29.62 L33.48 28.33 L30.73 31.63 L35 32.01 L31.2 34 Z',fill:'#ffffff'}),
+    h('path',{d:'M13.5 32.6 A11.5 11.5 0 0 0 36.5 32.6 A11.5 5 0 0 1 13.5 32.6 Z',fill:'#ffffff'}),
+    h('path',{d:'M25 79.4 L27.12 85.08 L31.8 81.22 L30.8 87.2 L36.78 86.2 L32.92 90.88 L38.6 93 L32.92 95.12 L36.78 99.8 L30.8 98.8 L31.8 104.78 L27.12 100.92 L25 106.6 L22.88 100.92 L18.2 104.78 L19.2 98.8 L13.22 99.8 L17.08 95.12 L11.4 93 L17.08 90.88 L13.22 86.2 L19.2 87.2 L18.2 81.22 L22.88 85.08 Z',fill:'#ffffff'}));
 }
 
 /* =====================================================================
