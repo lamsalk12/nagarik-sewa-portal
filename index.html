@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-PEKKvgP0pz01vPoNNMfIy1EdetzISfWeKZj4N9P+g9k='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-3Vj+SEc5y8ic2Q8TK4aClexDAgQGMtlcUUbvEGsl4XY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>नागरिक सेवा पोर्टल · Nepal government services directory</title>
 <meta name="description" content="नेपालका संघीय निकाय, ७ प्रदेश, ७७ जिल्ला र ७५३ स्थानीय तहका आधिकारिक वेबसाइट, सेवा गाइड, बिदा पात्रो, कर हिसाब र नक्सा एकै ठाउँमा। Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.">
@@ -195,7 +195,7 @@ button,input,select{font:inherit;color:inherit}
 .page-title .qicon{width:56px;height:56px}
 .page-title h1{font-family:var(--font-display);font-weight:800;font-size:clamp(24px,3.5vw,32px)}
 .page-title p{color:var(--text-muted)}
-.site-list{list-style:none;margin:0;padding:0;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden}
+.site-list{container-type:inline-size;list-style:none;margin:0;padding:0;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden}
 .site-list li+li{border-top:1px solid var(--border-subtle)}
 .site{display:flex;align-items:center;gap:14px;padding:14px 18px;text-decoration:none;color:inherit;min-height:64px}
 .site:hover{background:var(--surface-brand-subtle)}
@@ -203,9 +203,11 @@ button,input,select{font:inherit;color:inherit}
 .site-txt b{display:block;color:var(--text-strong);font-weight:600;line-height:1.3}
 .site-txt .en{display:block;font-size:14px;color:var(--text-muted);line-height:1.35}
 .site-txt .tag{font-size:12.5px;color:var(--brand-secondary);font-weight:600}
-.domain{font-family:var(--font-numeric);font-size:14px;color:var(--text-link);white-space:nowrap}
+.domain{flex:0 1 auto;min-width:0;max-width:45%;overflow:hidden;text-overflow:ellipsis;font-family:var(--font-numeric);font-size:14px;color:var(--text-link);white-space:nowrap}
 .site .go{color:var(--text-muted)}
-@media (max-width:600px){.domain{display:none}.site-txt .en::after{content:attr(data-domain);display:block;font-family:var(--font-numeric);color:var(--text-link);font-size:13px;margin-top:2px}}
+@media (max-width:600px){.domain{display:none}.site-txt .en[data-domain]::after{content:attr(data-domain);display:block;font-family:var(--font-numeric);color:var(--text-link);font-size:13px;margin-top:2px}}
+/* Narrow boxes (side panels, cards) stack the address under the name, whatever the screen width */
+@container (max-width:560px){.domain,.kind{display:none}.site{gap:10px;padding-inline:14px}.site-txt .en[data-domain]::after{content:attr(data-domain);display:block;font-family:var(--font-numeric);color:var(--text-link);font-size:13px;margin-top:2px;overflow-wrap:anywhere}}
 .empty{padding:32px;text-align:center;color:var(--text-muted)}
 
 
@@ -1048,7 +1050,7 @@ function LinkRow({item,t,title,sub,tag,badge}){
   return h('li',{className:'row'},
     h('a',{className:'site',href:item.url,target:'_blank',rel:'noopener noreferrer',onClick:()=>Saved.visit(item)},
       h('span',{className:'site-txt'},h('b',null,title),
-        sub && h('span',{className:'en','data-domain':item.domain},sub),
+        sub && h('span',{className:'en','data-domain':sub===item.domain ? undefined : item.domain},sub),
         tag && h('span',{className:'tag'},tag)),
       badge,
       h('span',{className:'domain'},item.domain),
