@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-F0QsIaA/dd6k5tIUYSyCsd+4UWVV78OW3qD1elE9KS4='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-EpuYQES5r0osafn4ovdNCepTmlr4fSt0NmYHi7nJbdI='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>नागरिक सेवा पोर्टल · Nepal government services directory</title>
+<title>नागरिक सेवा पोर्टल · Your route to government services</title>
 <meta name="description" content="नेपालका संघीय निकाय, ७ प्रदेश, ७७ जिल्ला र ७५३ स्थानीय तहका आधिकारिक वेबसाइट, सेवा गाइड, बिदा पात्रो, कर हिसाब र नक्सा एकै ठाउँमा। Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://lamsalk12.github.io/nagarik-sewa-portal/">
@@ -13,7 +13,7 @@
 <meta name="application-name" content="नागरिक सेवा">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="नागरिक सेवा पोर्टल">
-<meta property="og:title" content="नागरिक सेवा पोर्टल · Nepal government services directory">
+<meta property="og:title" content="नागरिक सेवा पोर्टल · सरकारी सेवासम्म पुग्ने बाटो · Your route to government services">
 <meta property="og:description" content="Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.">
 <meta property="og:url" content="https://lamsalk12.github.io/nagarik-sewa-portal/">
 <meta property="og:image" content="https://lamsalk12.github.io/nagarik-sewa-portal/icons/og-image.png">
@@ -23,7 +23,7 @@
 <meta property="og:locale" content="ne_NP">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="नागरिक सेवा पोर्टल · Nepal government services directory">
+<meta name="twitter:title" content="नागरिक सेवा पोर्टल · Your route to government services, all in one place">
 <meta name="twitter:description" content="Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.">
 <meta name="twitter:image" content="https://lamsalk12.github.io/nagarik-sewa-portal/icons/og-image.png">
 <meta name="twitter:image:alt" content="Nepal government services directory with a map of the 7 provinces">
@@ -1026,7 +1026,7 @@ function App(){
     if (route.view==='sector'){ const s2 = SECTORS.find(x=>x.id===route.id); if (s2) name = t(s2.ne,s2.en); }
     if (route.view==='guide'){ const g = GUIDES.find(x=>x.id===route.id); if (g) name = t(g.ne,g.en); }
     if (route.view==='journey'){ const j = JOURNEYS.find(x=>x.id===route.id); if (j) name = t(j.ne,j.en); }
-    document.title = route.view==='home' ? t('नागरिक सेवा पोर्टल · नेपालका सरकारी सेवा','Citizen Services Portal · Nepal government services') : `${name} · ${t('नागरिक सेवा पोर्टल','Citizen Services Portal')}`;
+    document.title = route.view==='home' ? t('नागरिक सेवा पोर्टल · सरकारी सेवासम्म पुग्ने बाटो','Citizen Services Portal · Your route to government services') : `${name} · ${t('नागरिक सेवा पोर्टल','Citizen Services Portal')}`;
   }, [route, uiLang]);
   useEffect(() => { const r = document.getElementById('root'); if (r) r.style.zoom = textSize===1 ? '' : String(textSize); store.set('textSize',textSize); }, [textSize]);
 
@@ -2450,14 +2450,14 @@ function SiteCheckPage({t}){
 const LANGS = [['ne','नेपाली','Nepali'],['en','English','English'],['mai','मैथिली','Maithili'],['bho','भोजपुरी','Bhojpuri'],['new','नेपाल भाषा','Nepal Bhasa']];
 const DICT = {
  mai:{'गृहपृष्ठ':'मुख्य पृष्ठ','सेवा गाइड':'सेवा गाइड','कार्यालय':'कार्यालय','संघीय निकाय':'संघीय निकाय','प्रदेश र पालिका':'प्रदेश आ पालिका','सुरक्षित':'सहेजल','उपकरण':'उपकरण','आपतकालीन':'आपतकालीन',
-  'नेपाल सरकार':'नेपाल सरकार','नागरिक सेवा पोर्टल':'नागरिक सेवा पोर्टल','सरकारी सेवा, एकै ठाउँबाट':'सरकारी सेवा, एकहि ठाम सँ','तपाईंलाई के भइरहेको छ?':'अहाँक जीवनमे की भ’ रहल अछि?','जीवनका घटना':'जीवनक घटना',
+  'नेपाल सरकार':'नेपाल सरकार','नागरिक सेवा पोर्टल':'नागरिक सेवा पोर्टल','सरकारी सेवासम्म पुग्ने बाटो, एकै ठाउँबाट':'सरकारी सेवा धरि पहुँचबाक बाट, एकहि ठाम सँ','तपाईंलाई के भइरहेको छ?':'अहाँक जीवनमे की भ’ रहल अछि?','जीवनका घटना':'जीवनक घटना',
   'सबै हेर्नुहोस्':'सभ देखू','बिदा पात्रो':'छुट्टीक पतरा','कहाँ उजुरी गर्ने':'कतय शिकायत करी','शुल्क र कर हिसाब':'शुल्क आ करक हिसाब','नक्कली साइट जाँच':'नकली साइटक जाँच','आपतकालीन तथा हेल्पलाइन':'आपतकालीन आ हेल्पलाइन',
   'उपकरण तथा सेटिङ':'उपकरण आ सेटिङ','प्रदेश तथा स्थानीय तह':'प्रदेश आ स्थानीय तह','जिल्लाका कार्यालय':'जिल्लाक कार्यालय','सेवा गाइड र कागजात चेकलिस्ट':'सेवा गाइड आ कागजातक सूची','भाषा':'भाषा','सुन्नुहोस्':'सुनू','रोक्नुहोस्':'रोकू'},
  bho:{'गृहपृष्ठ':'मुख्य पन्ना','सेवा गाइड':'सेवा गाइड','कार्यालय':'दफ्तर','संघीय निकाय':'संघीय निकाय','प्रदेश र पालिका':'प्रदेश आ पालिका','सुरक्षित':'सहेजल','उपकरण':'औजार','आपतकालीन':'आपातकालीन',
-  'नेपाल सरकार':'नेपाल सरकार','नागरिक सेवा पोर्टल':'नागरिक सेवा पोर्टल','सरकारी सेवा, एकै ठाउँबाट':'सरकारी सेवा, एके जगह से','तपाईंलाई के भइरहेको छ?':'रउआ जिनगी में का हो रहल बा?','जीवनका घटना':'जिनगी के घटना',
+  'नेपाल सरकार':'नेपाल सरकार','नागरिक सेवा पोर्टल':'नागरिक सेवा पोर्टल','सरकारी सेवासम्म पुग्ने बाटो, एकै ठाउँबाट':'सरकारी सेवा तक पहुँचे के राह, एके जगह से','तपाईंलाई के भइरहेको छ?':'रउआ जिनगी में का हो रहल बा?','जीवनका घटना':'जिनगी के घटना',
   'सबै हेर्नुहोस्':'सब देखीं','बिदा पात्रो':'छुट्टी के पतरा','कहाँ उजुरी गर्ने':'कहाँ शिकायत करीं','शुल्क र कर हिसाब':'शुल्क आ कर के हिसाब','नक्कली साइट जाँच':'नकली साइट के जाँच','आपतकालीन तथा हेल्पलाइन':'आपातकालीन आ हेल्पलाइन',
   'उपकरण तथा सेटिङ':'औजार आ सेटिङ','प्रदेश तथा स्थानीय तह':'प्रदेश आ स्थानीय तह','जिल्लाका कार्यालय':'जिला के दफ्तर','सेवा गाइड र कागजात चेकलिस्ट':'सेवा गाइड आ कागज के सूची','भाषा':'भाषा','सुन्नुहोस्':'सुनीं','रोक्नुहोस्':'रोकीं'},
- new:{'गृहपृष्ठ':'मू पौ','सुरक्षित':'सुरक्षित','आपतकालीन':'आपतकालीन','नेपाल सरकार':'नेपाः सरकार','सरकारी सेवा, एकै ठाउँबाट':'सरकारी सेवा, छथासं','सबै हेर्नुहोस्':'फुक्कं स्वयादिसँ',
+ new:{'गृहपृष्ठ':'मू पौ','सुरक्षित':'सुरक्षित','आपतकालीन':'आपतकालीन','नेपाल सरकार':'नेपाः सरकार','सबै हेर्नुहोस्':'फुक्कं स्वयादिसँ',
   'भाषा':'भाय्','सुन्नुहोस्':'न्यनादिसँ','रोक्नुहोस्':'दिकादिसँ','जीवनका घटना':'म्हिगःया घटना'}
 };
 function LangDialog({t,uiLang,setUiLang,onClose}){
@@ -2799,7 +2799,7 @@ function Home({t,lang}){
   return h(React.Fragment,null,
     h('section',{className:'hero'},h('div',{className:'wrap'},
       todayBS() && h('p',{className:'today'},h(Icon,{name:'calendar_today',size:18}),t('आज ','Today '),fmtBS(todayBS(),t('ne','en'))),
-      h('h1',null,t('सरकारी सेवा, एकै ठाउँबाट','Government services, from one place')),
+      h('h1',null,t('सरकारी सेवासम्म पुग्ने बाटो, एकै ठाउँबाट','Your route to government services, all in one place')),
       h('p',{className:'sub'},t(`संघीय ${toNe(total)} निकाय, ७ प्रदेश सरकार र स्थानीय तहका आधिकारिक साइट तथा सेवाहरू एकै ठाउँमा खोज्नुहोस्।`,`Find official sites of ${total} federal agencies, the 7 provincial governments and local bodies in one place.`)),
       h('form',{className:'search',role:'search',onSubmit:e=>e.preventDefault()},
         h(Icon,{name:'search',size:24}),
