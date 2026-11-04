@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-GFkR42mmTnx2EemMSIGSJ7VNGxWTw8CboHKGVD4n5c8='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-PEKKvgP0pz01vPoNNMfIy1EdetzISfWeKZj4N9P+g9k='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>नागरिक सेवा पोर्टल · Nepal government services directory</title>
 <meta name="description" content="नेपालका संघीय निकाय, ७ प्रदेश, ७७ जिल्ला र ७५३ स्थानीय तहका आधिकारिक वेबसाइट, सेवा गाइड, बिदा पात्रो, कर हिसाब र नक्सा एकै ठाउँमा। Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.">
@@ -276,11 +276,21 @@ button,input,select{font:inherit;color:inherit}
 .today{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-numeric);font-size:14.5px;color:var(--masthead-fg);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:var(--radius-pill);padding:4px 14px;margin-bottom:14px}
 .sos-btn{background:var(--brand-secondary);border-color:var(--brand-secondary);color:#fff;text-decoration:none}
 .sos-btn:hover{background:var(--brand-secondary);filter:brightness(1.08)}
-@media (max-width:1440px){.icon-btn .lbl{display:none}}
 .mh-nav a{white-space:nowrap}
-@media (max-width:1180px){.mh-nav a{padding:10px 8px;font-size:15px}}
+/* Desktop: name and actions on the first row, the menu on its own row below */
+@media (min-width:901px){
+  :root{--mh-h:128px}
+  .mh-row{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"brand actions" "nav nav";column-gap:var(--space-4);row-gap:6px;padding-block:10px 0}
+  .brand{grid-area:brand;margin-right:0;min-width:max-content}
+  .brand-title{overflow:visible;text-overflow:clip}
+  .mh-actions{grid-area:actions;justify-content:flex-end;flex-wrap:wrap}
+  .mh-nav{grid-area:nav;border-top:1px solid rgba(255,255,255,.14);overflow-x:auto;scrollbar-width:none;margin-inline:-6px}
+  .mh-nav::-webkit-scrollbar{display:none}
+  .mh-nav a{border-radius:0;padding:10px 14px;min-height:46px}
+  .mh-nav a[aria-current="page"]{box-shadow:inset 0 -3px 0 var(--brand-secondary);background:rgba(255,255,255,.08)}
+}
+@media (min-width:901px) and (max-width:1100px){.icon-btn .lbl{display:none}}
 @media (max-width:560px){.install-btn{display:none}}
-.mh-nav a{padding:10px 11px}
 .offline{display:flex;align-items:center;justify-content:center;gap:8px;padding:8px 16px;background:var(--status-warning-bg);color:var(--status-warning-fg);font-weight:600;font-size:14.5px;text-align:center}
 
 /* ---------- Guides ---------- */
@@ -310,7 +320,7 @@ button,input,select{font:inherit;color:inherit}
 .steps li:not(:last-child)::after{content:"";position:absolute;left:15px;top:44px;bottom:-6px;width:2px;background:var(--border-subtle)}
 .step-no{width:32px;height:32px;border-radius:50%;background:var(--brand-primary);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;flex:none}
 .steps li > span:last-child{padding-top:3px;min-width:0}
-.checklist{position:sticky;top:calc(env(safe-area-inset-top,0px) + 92px);display:flex;flex-direction:column;gap:10px}
+.checklist{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--mh-h,92px));display:flex;flex-direction:column;gap:10px}
 @media (max-width:960px){.checklist{position:static}}
 .cl-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .cl-head .group-h{margin:0}
@@ -396,7 +406,7 @@ input[type=date].control{appearance:auto;-webkit-appearance:auto}
 .district-links span{font-size:13.5px;color:var(--text-muted)}
 .district-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}
 @media (max-width:960px){.district-layout{grid-template-columns:1fr}.district-aside{order:-1}}
-.district-aside{display:flex;flex-direction:column;gap:14px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 92px)}
+.district-aside{display:flex;flex-direction:column;gap:14px;position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--mh-h,92px))}
 @media (max-width:960px){.district-aside{position:static}}
 .where-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (max-width:640px){.where-list{grid-template-columns:1fr}}
@@ -599,7 +609,7 @@ input[type=date].control{appearance:auto;-webkit-appearance:auto}
 .swatch.k1{background:var(--map-k1)}.swatch.k2{background:var(--map-k2)}.swatch.k3{background:var(--map-k3)}.swatch.k4{background:var(--map-k4)}
 .swatch.p1{background:var(--map-1)}.swatch.p2{background:var(--map-2)}.swatch.p3{background:var(--map-3)}.swatch.p4{background:var(--map-4)}.swatch.p5{background:var(--map-5)}.swatch.p6{background:var(--map-6)}.swatch.p7{background:var(--map-7)}
 .swatch.park{background:repeating-linear-gradient(45deg,var(--map-park) 0 2px,transparent 2px 5px)}
-.map-panel{position:sticky;top:calc(env(safe-area-inset-top,0px) + 92px);display:flex;flex-direction:column;gap:8px;max-height:calc(100vh - 120px);overflow:auto}
+.map-panel{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--mh-h,92px));display:flex;flex-direction:column;gap:8px;max-height:calc(100vh - 120px);overflow:auto}
 @media (max-width:960px){.map-panel{position:static;max-height:none}}
 .map-title{font-family:var(--font-display);font-weight:800;font-size:22px}
 .map-facts{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:4px 0 8px;font-size:15px}
@@ -1185,7 +1195,7 @@ function GuidePage({t,id}){
    Tools: Bikram Sambat ⇄ AD date converter, helplines, settings
    ===================================================================== */
 const ND = window.NepaliDate;
-const BS_MONTHS = ['बैशाख','जेठ','असार','साउन','भदौ','असोज','कात्तिक','मंसिर','पुस','माघ','फागुन','चैत'];
+const BS_MONTHS = ['बैशाख','जेठ','असार','साउन','भदौ','असोज','कार्तिक','मंसिर','पुस','माघ','फागुन','चैत'];
 const BS_MONTHS_EN = ['Baishakh','Jestha','Asar','Shrawan','Bhadra','Asoj','Kartik','Mangsir','Poush','Magh','Falgun','Chaitra'];
 const WEEK_NE = ['आइतबार','सोमबार','मंगलबार','बुधबार','बिहीबार','शुक्रबार','शनिबार'];
 const WEEK_EN = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -1616,7 +1626,7 @@ function HoursCard({t,valley}){
       h('dt',null,t('सोमबार–शुक्रबार','Mon–Fri')),h('dd',{className:'num'},hrs.winter?t('९:०० – ४:००','9:00 – 4:00'):t('९:०० – ५:००','9:00 – 5:00'),hrs.winter&&h('small',null,t(' (हिउँदे समय)',' (winter hours)'))),
       h('dt',null,t('शनिबार र आइतबार','Saturday & Sunday')),h('dd',null,t('बिदा','Closed')),
       h('dt',null,t('सार्वजनिक बिदा','Public holidays')),h('dd',null,h('a',{href:'#holidays'},t('बिदा पात्रो हेर्नुहोस्','See the holiday calendar')))),
-    h('p',{className:'field-hint'},t('गृह मन्त्रालयको परिमार्जित समयतालिका। १६ कात्तिकदेखि १५ माघसम्म ४ बजेसम्म मात्र खुल्छ।','Ministry of Home Affairs revised schedule. From 16 Kartik to 15 Magh offices close at 4.')));
+    h('p',{className:'field-hint'},t('गृह मन्त्रालयको परिमार्जित समयतालिका। १६ कार्तिकदेखि १५ माघसम्म ४ बजेसम्म मात्र खुल्छ।','Ministry of Home Affairs revised schedule. From 16 Kartik to 15 Magh offices close at 4.')));
 }
 function TodayStrip({t}){
   const hrs = useHours(false);
