@@ -1,9 +1,25 @@
-# Citizen Services Portal (PWA)
+# नागरिक सेवा पोर्टल · Nagarik Sewa Portal
+
+[![Site checks](https://github.com/lamsalk12/nagarik-sewa-portal/actions/workflows/checks.yml/badge.svg)](https://github.com/lamsalk12/nagarik-sewa-portal/actions/workflows/checks.yml)
+[![MIT licence](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+सरकारी सेवासम्म पुग्ने बाटो, एकै ठाउँबाट। An open-source, installable directory of Nepal government services:
+federal agencies by sector, 7 provinces, 77 districts and all 753 local levels, with step-by-step guides, a map and everyday tools.
 
 A community-led initiative. Not affiliated with the Government of Nepal.
 
-Live: https://lamsalk12.github.io/nagarik-sewa-portal/
+**Live:** https://lamsalk12.github.io/nagarik-sewa-portal/
 
+## Contributing
+Anyone can help, with or without code: report a wrong link, suggest a missing official site, or fix a translation.
+Start with [CONTRIBUTING.md](CONTRIBUTING.md) and the [issue forms](https://github.com/lamsalk12/nagarik-sewa-portal/issues/new/choose).
+Please follow the [code of conduct](CODE_OF_CONDUCT.md). Security problems go to [SECURITY.md](SECURITY.md), not public issues.
+
+## Licence
+Code and text: [MIT](LICENSE). Third-party data, libraries and the national emblem keep their own terms: see [NOTICE.md](NOTICE.md).
+
+## Running it
 Static files, no build step. Host the folder on any HTTPS server (or `localhost`):
 
     npx serve .        # or: python3 -m http.server 8080

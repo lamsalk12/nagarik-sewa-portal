@@ -1,0 +1,28 @@
+name: अनुवाद सुधार · Translation fix
+description: Correct text in Nepali, Maithili, Bhojpuri, Nepal Bhasa or English.
+title: "Translation: "
+labels: [translation]
+body:
+  - type: dropdown
+    id: lang
+    attributes:
+      label: भाषा · Language
+      options: [नेपाली · Nepali, मैथिली · Maithili, भोजपुरी · Bhojpuri, नेपाल भाषा · Nepal Bhasa, English]
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: पृष्ठ · Page
+  - type: textarea
+    id: now
+    attributes:
+      label: अहिलेको पाठ · Current text
+    validations:
+      required: true
+  - type: textarea
+    id: better
+    attributes:
+      label: सही पाठ · Better text
+    validations:
+      required: true

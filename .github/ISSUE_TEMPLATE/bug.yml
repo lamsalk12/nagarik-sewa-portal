@@ -1,0 +1,21 @@
+name: समस्या · Something is broken
+description: A page, button or feature does not work as expected.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: के भयो? · What happened?
+      description: Steps to see the problem. Please do not include personal details.
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: उपकरण र ब्राउजर · Device and browser
+      placeholder: e.g. Android, Chrome; iPhone, Safari; Windows, Edge
+  - type: dropdown
+    id: installed
+    attributes:
+      label: इन्स्टल गरिएको एप? · Installed app?
+      options: [No, browser tab, Yes, installed app]

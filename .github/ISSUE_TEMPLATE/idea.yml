@@ -1,0 +1,15 @@
+name: नयाँ सुझाव · Feature idea
+description: Suggest a feature that would help citizens.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas that fit best: work offline, need no personal data, and stay correct without someone updating them every week.
+  - type: textarea
+    id: idea
+    attributes:
+      label: सुझाव · Idea
+      description: What should it do, and who does it help?
+    validations:
+      required: true

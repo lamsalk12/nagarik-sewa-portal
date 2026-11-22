@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-A56nD+Dbe6JVBGHVHGiqDImWUC8WR9VFjPk3S6ZZbwI='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-3Vqxcr5ci55Xcn7eK0uXbFqFy+fWr+dlAVRgTykeN3M='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>नागरिक सेवा पोर्टल · Your route to government services</title>
 <meta name="description" content="नेपालका संघीय निकाय, ७ प्रदेश, ७७ जिल्ला र ७५३ स्थानीय तहका आधिकारिक वेबसाइट, सेवा गाइड, बिदा पात्रो, कर हिसाब र नक्सा एकै ठाउँमा। Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.">
@@ -2984,6 +2984,8 @@ function Footer({t}){
         h('li',null,t('हेलो सरकार','Hello Sarkar'),' ',h('span',{className:'hot'},'1111')),
         h('li',null,h('a',{href:'https://nepal.gov.np/',target:'_blank',rel:'noopener noreferrer',style:{color:'var(--masthead-fg)'}},'nepal.gov.np'))))),
     h('p',{className:'foot-note'},t('यो पोर्टलले कुनै व्यक्तिगत विवरण माग्दैन। निकायका ठेगाना परिवर्तन हुन सक्छन्; सरकारी कामका लागि सम्बन्धित निकायको आधिकारिक साइट हेर्नुहोस्।','This portal never asks for personal details. Agency addresses can change; for official business, use the agency’s own website.')),
+    h('p',{className:'foot-note'},t('यो पोर्टल खुला स्रोत (MIT) हो। ','This portal is open source (MIT). '),
+      h('a',{href:REPO,target:'_blank',rel:'noopener noreferrer',style:{color:'var(--masthead-fg)'}},t('GitHub मा कोड हेर्नुहोस् र योगदान गर्नुहोस्','View the code and contribute on GitHub'))),
     h('div',{className:'foot-credit'},
       h('div',{className:'credit-who'},h(FlagMark),
         h('p',null,t('समुदायको अगुवाइमा गरिएको प्रयास','A community-led initiative'),h('span',{className:'sep','aria-hidden':'true'},' · '),h('br',{className:'credit-br'}),

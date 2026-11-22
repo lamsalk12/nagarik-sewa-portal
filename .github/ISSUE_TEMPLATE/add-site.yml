@@ -1,0 +1,35 @@
+name: आधिकारिक साइट थप्नुहोस् · Add an official site
+description: Suggest a government website, app or helpline that is missing.
+title: "Add site: "
+labels: [new-site]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Only official government, public university, regulator or state-owned bodies are listed. Please do not include personal details.
+  - type: input
+    id: name
+    attributes:
+      label: निकायको नाम · Name of the body
+      placeholder: e.g. Department of Passports / राहदानी विभाग
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: वेबसाइट वा एप लिंक · Website or app link
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: यो आधिकारिक हो भन्ने प्रमाण · How do you know it is official?
+      description: e.g. linked from a ministry site, listed on nepal.gov.np, or printed on an official notice.
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: कुन खण्डमा? · Which section should it go in?
+      placeholder: e.g. Health, Education, Bagmati Province, Kaski district

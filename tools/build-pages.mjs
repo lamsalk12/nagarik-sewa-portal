@@ -101,7 +101,7 @@ ${body}
 <div class="cta"><a class="btn primary" href="${up}#${appHash}">एपमा खोल्नुहोस् · Open in the app</a><a class="btn" href="${report}" rel="noopener noreferrer">गलत जानकारी रिपोर्ट गर्नुहोस् · Report wrong information</a></div>
 <p class="en" style="font-size:14px">रिपोर्ट GitHub मा सार्वजनिक हुन्छ; व्यक्तिगत विवरण नलेख्नुहोस्। Reports are public on GitHub; do not include personal details.</p>
 </main>
-<footer><div class="w"><b>समुदायको अगुवाइमा गरिएको प्रयास · नेपाल सरकारसँग आबद्ध छैन।</b><br>A community-led initiative, not affiliated with the Government of Nepal. For official business, use each agency’s own website.</div></footer>
+<footer><div class="w"><b>समुदायको अगुवाइमा गरिएको प्रयास · नेपाल सरकारसँग आबद्ध छैन।</b><br>A community-led initiative, not affiliated with the Government of Nepal. For official business, use each agency’s own website.<br>खुला स्रोत · Open source (MIT): <a href="${REPO}" style="color:#fff">GitHub</a></div></footer>
 </body>
 </html>
 `;
