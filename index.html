@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-KvO2bfD+iVDyJKYAvV2Ybzn3RHbiFFdevJUz/SjAKcM='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-A56nD+Dbe6JVBGHVHGiqDImWUC8WR9VFjPk3S6ZZbwI='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>नागरिक सेवा पोर्टल · Your route to government services</title>
 <meta name="description" content="नेपालका संघीय निकाय, ७ प्रदेश, ७७ जिल्ला र ७५३ स्थानीय तहका आधिकारिक वेबसाइट, सेवा गाइड, बिदा पात्रो, कर हिसाब र नक्सा एकै ठाउँमा। Find official websites of Nepal’s federal agencies, 7 provinces, 77 districts and 753 local levels, with service guides, a holiday calendar, tax calculators and a map. Community-led; not affiliated with the Government of Nepal.">
@@ -100,7 +100,7 @@ button,input,select{font:inherit;color:inherit}
 .ribbon{height:5px;background:linear-gradient(90deg,var(--brand-secondary) 0 62%,#ffffff 62% 63%,var(--brand-secondary) 63%)}
 .mh-row{display:flex;align-items:center;gap:var(--space-4);padding-block:10px}
 .brand{display:flex;align-items:center;gap:var(--space-3);text-decoration:none;color:inherit;min-width:0;margin-right:auto}
-.brand svg{width:34px;height:42px;flex:none}
+.brand .emblem{width:auto;height:44px;flex:none;display:block}
 .brand-text{display:flex;flex-direction:column;min-width:0}
 .brand-gov{font-size:13px;color:var(--masthead-muted);letter-spacing:.04em;line-height:1.2}
 .brand-title{font-family:var(--font-display);font-weight:800;font-size:19px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -113,7 +113,7 @@ button,input,select{font:inherit;color:inherit}
 .icon-btn:hover{background:rgba(255,255,255,.12)}
 .icon-btn .lbl{display:inline}
 @media (max-width:900px){.mh-nav{display:none}}
-@media (max-width:560px){.brand-title{font-size:16px}.icon-btn .lbl{display:none}.brand svg{width:28px;height:35px}}
+@media (max-width:560px){.brand-title{font-size:16px}.icon-btn .lbl{display:none}.brand .emblem{height:38px}}
 
 /* ---------- Buttons ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:var(--radius-md);border:1.5px solid transparent;font-family:var(--font-ui);font-weight:600;font-size:16px;cursor:pointer;text-decoration:none;line-height:1.1;transition:background .15s,border-color .15s}
@@ -690,7 +690,7 @@ input[type=date].control{appearance:auto;-webkit-appearance:auto}
 .foot-note{border-top:1px solid rgba(255,255,255,.14);margin-top:24px;padding-top:16px;font-size:13.5px}
 .foot-credit{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;margin-top:20px;padding:18px 20px;border-radius:var(--radius-lg);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
 .credit-who{display:flex;align-items:center;gap:16px;min-width:0}
-.credit-who svg{width:40px;height:50px;flex:none}
+.credit-who .emblem{width:auto;height:52px;flex:none;display:block}
 .credit-who p{color:var(--masthead-fg);font-size:16px;line-height:1.5}
 .credit-who strong{font-weight:600}
 .credit-who .sep{display:none}
@@ -988,14 +988,8 @@ const parseRoute = () => {
 };
 
 function FlagMark(){
-  /* National flag: crimson field with a dark blue border; white moon with eight rays above a crescent, and a white twelve-ray sun.
-     A thin white edge keeps it visible on the blue header. */
-  return h('svg',{viewBox:'-2 -2 104 126','aria-hidden':'true'},
-    h('path',{d:'M1 1 L97 63 L39 63 L97 121 L1 121 Z',fill:'#003893',stroke:'#ffffff',strokeWidth:2.4,strokeLinejoin:'round',paintOrder:'stroke'}),
-    h('path',{d:'M7 11.5 L82.5 58 L28 58 L86.5 115 L7 115 Z',fill:'#DC143C'}),
-    h('path',{d:'M18.8 34 L15 32.01 L19.27 31.63 L16.52 28.33 L20.62 29.62 L19.33 25.52 L22.63 28.27 L23.01 24 L25 27.8 L26.99 24 L27.37 28.27 L30.67 25.52 L29.38 29.62 L33.48 28.33 L30.73 31.63 L35 32.01 L31.2 34 Z',fill:'#ffffff'}),
-    h('path',{d:'M13.5 32.6 A11.5 11.5 0 0 0 36.5 32.6 A11.5 5 0 0 1 13.5 32.6 Z',fill:'#ffffff'}),
-    h('path',{d:'M25 79.4 L27.12 85.08 L31.8 81.22 L30.8 87.2 L36.78 86.2 L32.92 90.88 L38.6 93 L32.92 95.12 L36.78 99.8 L30.8 98.8 L31.8 104.78 L27.12 100.92 L25 106.6 L22.88 100.92 L18.2 104.78 L19.2 98.8 L13.22 99.8 L17.08 95.12 L11.4 93 L17.08 90.88 L13.22 86.2 L19.2 87.2 L18.2 81.22 L22.88 85.08 Z',fill:'#ffffff'}));
+  /* National emblem of Nepal (Nishan Chhap). Decorative: the text beside it names the site. */
+  return h('img',{className:'emblem',src:'icons/emblem.webp',alt:'',width:189,height:160,decoding:'async'});
 }
 
 /* =====================================================================

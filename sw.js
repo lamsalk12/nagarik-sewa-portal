@@ -1,8 +1,8 @@
 /* Citizen Services Portal — service worker
    App shell and self-hosted scripts: cache-first. Google Fonts: stale-while-revalidate.
    Only successful (200) responses are cached. Nothing else leaves the network path. */
-const VERSION = 'nsp-v16';
-const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png',
+const VERSION = 'nsp-v17';
+const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/emblem.webp',
   './map/nepal-map.json', './vendor/react.production.min.js', './vendor/react-dom.production.min.js', './vendor/nepali-date-converter.umd.js'];
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 const cacheable = res => res && res.ok && (res.type === 'basic' || res.type === 'cors');
